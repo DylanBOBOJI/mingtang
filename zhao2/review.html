@@ -60,6 +60,11 @@
          border:1px solid var(--line); border-radius:1.4mm; padding:1.9mm 2.5mm; flex:none; }
   .idea div{ font-size:6.2pt; line-height:1.42; color:#3B3731; }
   .idea b{ color:var(--wine2); }
+  .flow{ display:flex; align-items:stretch; gap:1.2mm; margin:2.5mm 0; }
+  .flow .step{ flex:1; background:#fff; border:1px solid var(--line); border-top:1.1mm solid var(--wine3); border-radius:1.2mm; padding:2mm; font-size:6.3pt; line-height:1.45; }
+  .flow .step b{ display:block; color:var(--wine); font-size:7pt; margin-bottom:.8mm; }
+  .flow .step span{ display:block; color:var(--gray); }
+  .flow .arrow{ display:flex; align-items:center; color:var(--gold); font-weight:900; font-size:10pt; }
   .qgroup{ grid-column:1/-1; background:var(--wine); color:#fff; font-size:6.8pt; font-weight:800; padding:1.2mm 2.4mm; border-radius:1mm; margin-top:.8mm; letter-spacing:.5pt; }
   .qgrid{ display:grid; grid-template-columns:1fr 1fr; gap:1.9mm; }
   .qa{ background:#fff; border:1px solid var(--line); border-radius:1.4mm;
@@ -122,21 +127,21 @@
   @media screen and (min-width:1200px){
     body{ padding-left:200px; }
     .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:190px; z-index:60;
-           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:11mm 10px 10mm; overflow:auto; }
-    .side .st{ font-size:14pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
-    .side .ss{ font-size:7.6pt; color:#B9C8DC; line-height:1.55; margin:1.6mm 6px 4mm; }
-    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:3mm 2px 2.2mm; }
-    .side .bt{ font-size:7.6pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 2mm; }
-    .side .li{ display:flex; gap:4px; font-size:9pt; line-height:1.5; color:#EADCCB; margin:1.4mm 4px; }
+           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:9mm 8px 8mm; overflow:auto; }
+    .side .st{ font-size:12.5pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
+    .side .ss{ font-size:7pt; color:#B9C8DC; line-height:1.45; margin:1.2mm 6px 3mm; }
+    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:2mm 2px 1.4mm; }
+    .side .bt{ font-size:7pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 1.2mm; }
+    .side .li{ display:flex; gap:4px; font-size:8.4pt; line-height:1.4; color:#EADCCB; margin:1mm 4px; }
     .side .li b{ color:#fff; font-weight:800; white-space:nowrap; }
-    .side .big{ display:flex; align-items:baseline; gap:5px; margin:1.2mm 4px; }
-    .side .big b{ font-size:18pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
-    .side .big span{ font-size:7pt; color:#B9C8DC; }
+    .side .big{ display:flex; align-items:baseline; gap:4px; margin:.8mm 4px; }
+    .side .big b{ font-size:15pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
+    .side .big span{ font-size:6.6pt; color:#B9C8DC; }
     .side .big.red b{ color:#FF8A7A; }
-    .side .kv{ display:flex; justify-content:space-between; gap:5px; font-size:8.4pt; color:#EADCCB; margin:1.5mm 4px; }
+    .side .kv{ display:flex; justify-content:space-between; gap:4px; font-size:7.8pt; color:#EADCCB; margin:1mm 4px; }
     .side .kv b{ color:#fff; font-weight:800; }
-    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.8pt; line-height:1.4;
-             padding:1.7mm 4px; border-left:2px solid transparent; }
+    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.2pt; line-height:1.3;
+             padding:1.2mm 4px; border-left:2px solid transparent; }
     .side .nav a:hover{ background:rgba(255,255,255,.08); border-left-color:#C08A2D; color:#fff; }
   }
   @media screen{ .page{ margin:8mm auto 0; box-shadow:0 2px 12px rgba(0,0,0,.12); } .page:last-of-type{ margin-bottom:10mm; } }
@@ -174,14 +179,13 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <div class="blk nav">
     <div class="bt">目录</div>
-    <a href="#cover">材料说明</a>
     <a href="#p1">01 速查</a>
     <a href="#p2">02 策略·卖点</a>
     <a href="#p3">03 风控问答</a>
     <a href="#p4">04 产品·难题</a>
     <a href="#p5">05 执行</a>
     <a href="#appendix">附录 A·7 月回撤</a>
-    <a href="#script">附录 B·逐字稿</a>
+    <a href="#script">附录 B·交流脉络</a>
   </div>
 
   <div class="blk">
@@ -225,7 +229,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <table class="t">
     <tr><th style="width:24mm">背景</th><td><b>09:00 全行代销评审</b>（风险合规 / 消保 / 产品引入，40′ 陈述＋60′ 问答，可投屏）。</td></tr>
-    <tr><th>本次物料</th><td>① 上会手册 v3（<b>5 页正文＋附录 A/B</b>）；② <b>PPT</b>（关键页见图；完整版明天更新后发）；③ 上台逐字稿（<b>附录 B·单独 PDF</b>）。</td></tr>
+    <tr><th>本次物料</th><td>① 上会手册 v3（<b>5 页正文＋附录 A/B</b>）；② <b>PPT</b>（关键页见图；完整版明天更新后发）；③ 上台逐字稿（<b>附录 B 内附 PDF</b>）。</td></tr>
   </table>
 
   <div class="sec"><span class="no">01</span><span class="tt">项目来龙去脉（会前 3 分钟）</span><span class="sub">2021 → 2024 → 2026/7 → 10/27</span></div>
@@ -279,7 +283,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
     <a href="#p3"><b>03 风控问答 · P3</b><span>14 问＋消保 2 问</span></a>
     <a href="#p4"><b>04 产品·难题 · P4</b><span>7 问＋策略产品 10 问</span></a>
     <a href="#p5"><b>05 执行 · P5</b><span>判断 / 分工 / 应对</span></a>
-    <a href="#appendix"><b>附录 A/B</b><span>7 月回撤 / 逐字稿</span></a>
+    <a href="#appendix"><b>附录 A/B</b><span>7 月回撤 / 交流脉络</span></a>
   </div>
 
   <div class="quote">
@@ -423,8 +427,8 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
       <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P15 中性业绩：</b>38.03 / 9.32 / 5.21 / 1.79 / -5.30；对账 35.63 vs 34.67。</div>
     </div>
     <div class="card">
-      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p18.png" alt="P18 风控补强" style="width:100%;border:1px solid var(--line);border-radius:1mm">
-      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P18 风控补强：</b>流动性/残差波动率设上限；size 一直 ±0.2；集中度临时压降。</div>
+      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p28.png" alt="P28 股票六步流水线" style="width:100%;border:1px solid var(--line);border-radius:1mm">
+      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P28 股票六步流水线：</b>数据 → 因子 → 模型 → 组合 → 执行 → 归因。</div>
     </div>
   </div>
 
@@ -707,37 +711,45 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　附录 A·7月回撤</span></div>
 </div>
 
-<!-- ================= 附录 B 上台逐字稿 ================= -->
-<div class="page" id="script">
-  <div class="hd">
-    <div><div class="t1">附录 B · 上台逐字稿</div>
-      <div class="t2">6 页完整台词；领导不必全读，现场按 P1 的 40 分钟节奏走</div></div>
-    <div class="pg">内部 · 不外发<br><b>附录 B</b></div>
+<!-- ================= 附录 B 交流脉络 ================= -->
+<div class=page id=script>
+  <div class=hd>
+    <div><div class=t1>附录 B · 交流脉络（思维导图）</div>
+      <div class=t2>40 分钟一条线：先认、再证、后要；每个人只讲一件事，讲完就交</div></div>
+    <div class=pg>内部 · 不外发<br><b>附录 B</b></div>
   </div>
 
-  <div class="sec"><span class="no">01</span><span class="tt">谁讲哪段</span><span class="sub">0–40′，每段一个重点</span></div>
-  <table class="t">
-    <tr><th style="width:18mm">时间</th><th style="width:32mm">谁</th><th>这一段只讲一件事</th></tr>
-    <tr><td class="k">0–3′</td><td class="k">庞小强</td><td>五年合作、20 亿额度基本发完、30+ 分行；把时间交给顾小军。</td></tr>
-    <tr><td class="k">3–18′</td><td class="k">顾小军</td><td>先给结论：成益 1 号剥离 CTA；38.03/9.32/-5.30；对账 35.63 vs 34.67；7 月回撤与修复。</td></tr>
-    <tr><td class="k">18–26′</td><td class="k">李维佳</td><td>全市场选股 3500+、IF/IC/IM 混合对冲、Pure Alpha &gt;90%；敞口四个数；两次迭代。</td></tr>
-    <tr><td class="k">26–33′</td><td class="k">顾小军</td><td>68/51、72 亿/129 支、容量 150 亿、80% 预警/100% 暂停、30+ 分行。</td></tr>
-    <tr><td class="k">33–38′</td><td class="k">庞小强</td><td>R3 要素、费率/期限/跟投、申请 10–20 亿新额度、分批控量。</td></tr>
-    <tr><td class="k">38–40′</td><td class="k">顾小军</td><td>三句话：业绩可对账、风险有边界、合作有方案；请评审给档级与额度。</td></tr>
-  </table>
-
-  <div class="three" style="margin-top:1mm">
-    <div class="card"><div class="note"><b>庞小强 · 开场</b><br>“感谢五年合作；20 亿额度基本发完、30+ 分行；今年 CTA+中性达到客户长期收益预期。下面把时间交给顾小军。”</div></div>
-    <div class="card"><div class="note"><b>顾小军 · 业绩</b><br>“这条曲线是拿贵行在管的成益 1 号拆出来的：38.03/9.32/-5.30；拨出的中性加回 CTA，对账 35.63 对 34.67。”</div></div>
-    <div class="card"><div class="note"><b>李维佳 · 策略</b><br>“全市场 3500+，IF/IC/IM 混合对冲，Pure Alpha &gt;90%；敞口四个数，7 月动作有阈值、有记录。”</div></div>
+  <div class=flow>
+    <div class=step><b>0–3′ 庞小强</b><span>合作底盘<br>20 亿额度基本发完<br>30+ 分行<br>把时间交给顾小军</span></div>
+    <div class=arrow>→</div>
+    <div class=step><b>3–18′ 顾小军</b><span>业绩先给结论<br>38.03/9.32/-5.30<br>对账 35.63/34.67<br>7 月：认→转→数</span></div>
+    <div class=arrow>→</div>
+    <div class=step><b>18–26′ 李维佳</b><span>策略与风控<br>3500+ 选股<br>IF/IC/IM 混合<br>Pure Alpha &gt;90%</span></div>
+    <div class=arrow>→</div>
+    <div class=step><b>26–33′ 顾小军</b><span>能力与规模<br>68/51<br>72 亿/129 支<br>容量 150 亿</span></div>
+    <div class=arrow>→</div>
+    <div class=step><b>33–38′ 庞小强</b><span>要素与合作<br>R3 费率/期限<br>申请 10–20 亿<br>分批、控量</span></div>
+    <div class=arrow>→</div>
+    <div class=step><b>38–40′ 顾小军</b><span>收束<br>业绩可对账<br>风险有边界<br>合作有方案</span></div>
   </div>
 
-  <div class="quote"><b>完整逐字稿：</b>6 页，含开场、业绩、策略、能力、要素、收束与交接句；点下面按钮打开 PDF。</div>
-  <div style="text-align:center;margin:4mm 0">
-    <a href="pdf/script.pdf" style="display:inline-block;background:var(--wine3);color:#fff;text-decoration:none;font-weight:800;font-size:10pt;padding:3mm 8mm;border-radius:2mm">打开完整逐字稿 PDF（6 页）</a>
+  <div class=sec><span class=no>01</span><span class=tt>三条主线，谁都不能跑题</span><span class=sub>理工男听结构：先结论、再证据、后边界</span></div>
+  <div class=three>
+    <div class=card><div class=note><b>数字线｜顾小军</b><br>38.03 → 9.32 → -5.30；对账 35.63/34.67。只讲“贵行自己的产品拆出来的”，不讲拟合。</div></div>
+    <div class=card><div class=note><b>风控线｜顾小军/李维佳</b><br>7 月三因：波动放大、风格共振、Pure Alpha 回撤；四条改进：集中度、0.6 硬顶、2–3pp 干预、异常判断。</div></div>
+    <div class=card><div class=note><b>合作线｜庞小强</b><br>20 亿额度基本发完、30+ 分行；申请 10–20 亿新额度；分批、控量、排期；不逼单。</div></div>
   </div>
 
-  <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　附录 B · 上台逐字稿</span></div>
+  <div class=sec><span class=no>02</span><span class=tt>每个人只记三句</span><span class=sub>不背台词，按结构展开</span></div>
+  <div class=idea style=grid-template-columns:repeat(3,1fr)>
+    <div><b>庞小强｜</b>① 五年合作 ② 20 亿发完 ③ 请评审给档级/额度</div>
+    <div><b>顾小军｜</b>① 业绩可对账 ② 7 月有预案 ③ 合作有方案</div>
+    <div><b>李维佳｜</b>① 3500+ 选股 ② 混合对冲 ③ Pure Alpha &gt;90%</div>
+  </div>
+
+  <div class=note><b>逐字稿（备用）：</b><a href=pdf/script.pdf>6 页完整台词 PDF</a>　·　不要求领导全读，按上面的结构自己展开。</div>
+
+  <div class=ft><span>ZHAO-2026-10-27-REVIEW v3　附录 B · 交流脉络</span></div>
 </div>
 
 </body>
