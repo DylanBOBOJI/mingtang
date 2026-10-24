@@ -141,7 +141,8 @@
   </div>
 </div>
 <script>
-function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}\nfunction unlock(){
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}
+function unlock(){
   var v=document.getElementById('pw').value.trim();
   if(gh(v)==='d7ea78a5'||gh(v)==='7238631b'){
     document.getElementById('gate').style.display='none';
