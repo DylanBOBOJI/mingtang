@@ -141,9 +141,9 @@
   </div>
 </div>
 <script>
-function unlock(){
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}\nfunction unlock(){
   var v=document.getElementById('pw').value.trim();
-  if(v==='涵德'||v==='123'){
+  if(gh(v)==='d7ea78a5'||gh(v)==='7238631b'){
     document.getElementById('gate').style.display='none';
     try{sessionStorage.setItem('zhao_ok','1');}catch(e){}
   }else{document.getElementById('err').textContent='密码不对，请重试';}
