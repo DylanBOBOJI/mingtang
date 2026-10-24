@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>全委 · 董博士团队｜CTA 复盘与追加建议（A4 打印版）</title>
+<style>
+  @page{ size:A4 portrait; margin:0; }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  :root{
+    --wine:#0B1B4D; --wine2:#14305C; --wine3:#002FA7;
+    --gold:#B7791F; --cream:#F7F9FC; --paper:#E9EDF5;
+    --ink:#1E2A44; --gray:#6A7488; --line:#DCE3EE;
+    --amber:#FFF7E8; --red:#C0392B; --tint:#EEF3FA; --green:#1E7F5C;
+  }
+  html,body{ background:var(--paper); color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif; font-weight:500; -webkit-font-smoothing:antialiased; }
+  .bar{ background:#241F1B; color:#F3EFE6; padding:9px 18px; font-size:12.5px;
+        display:flex; justify-content:space-between; align-items:center; gap:18px; }
+  .bar b{ color:#E8C79A; }
+  .bar button{ background:var(--wine3); color:#fff; border:0; border-radius:3px;
+        padding:7px 16px; font-size:12.5px; font-family:inherit; cursor:pointer; }
+  .page{ width:210mm; height:296.6mm; background:var(--cream); margin:0 auto;
+         padding:9mm 10mm 7mm 11mm; overflow:hidden; display:flex; flex-direction:column;
+         gap:2.6mm; position:relative; }
+  .hd{ background:linear-gradient(115deg,#081633 0%,#0B1B4D 55%,#002FA7 100%);
+       color:#fff; border-radius:2.2mm; padding:3.4mm 4.6mm 3.1mm; flex:none;
+       display:flex; justify-content:space-between; align-items:flex-end; gap:5mm; }
+  .hd .t1{ font-size:14.5pt; font-weight:700; letter-spacing:.6pt; line-height:1.2; }
+  .hd .t2{ font-size:6.9pt; opacity:.86; margin-top:1.1mm; letter-spacing:.3pt; }
+  .hd .t2 b{ color:#F3D2A6; }
+  .hd .pg{ font-size:6.4pt; opacity:.8; text-align:right; line-height:1.5; white-space:nowrap; }
+  .hd .pg b{ font-size:12pt; color:#F3D2A6; }
+  .sec{ display:flex; align-items:center; gap:2mm; flex:none; margin-top:.4mm; }
+  .sec .no{ background:var(--wine2); color:#fff; font-size:7pt; font-weight:700;
+            border-radius:1mm; padding:.7mm 1.6mm; letter-spacing:.4pt; }
+  .sec .tt{ font-size:9.2pt; font-weight:700; color:var(--wine); letter-spacing:.4pt; }
+  .sec .sub{ font-size:6.8pt; color:var(--gray); margin-left:auto; }
+  .toc{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.3mm; flex:none; }
+  .toc .lbl{ grid-column:1/-1; display:flex; justify-content:space-between; align-items:baseline;
+             font-size:6.2pt; color:var(--gray); margin-bottom:.2mm; }
+  .toc .lbl b{ font-size:7.8pt; color:var(--wine); letter-spacing:1.2pt; }
+  .toc a{ text-decoration:none; background:#fff; border:1px solid var(--line);
+          border-top:1.3mm solid var(--wine2); border-radius:1.2mm; padding:1.2mm 1.5mm;
+          color:var(--wine); font-size:6.2pt; font-weight:700; line-height:1.3; }
+  .toc a b{ display:block; font-size:6.9pt; color:var(--wine); margin-bottom:.35mm; }
+  .toc a span{ display:block; color:var(--gray); font-weight:400; font-size:5.6pt; margin-top:.2mm; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:1.8mm;
+         padding:2.6mm 3mm; box-shadow:0 .5mm 1.4mm rgba(90,60,30,.05); }
+  table{ width:100%; border-collapse:collapse; }
+  .t th{ background:var(--wine); color:#fff; font-size:6.7pt; font-weight:600;
+         padding:1.5mm 1.8mm; text-align:left; }
+  .t td{ border-bottom:1px solid var(--line); padding:1.5mm 1.8mm; font-size:6.9pt;
+         line-height:1.42; vertical-align:top; background:#fff; }
+  .t tr:nth-child(even) td{ background:#FDF9F1; }
+  .t td.k{ color:var(--wine); font-weight:700; white-space:nowrap; }
+  .t td b{ color:var(--wine2); }
+  .t td.num{ font-family:Arial,Helvetica,sans-serif; font-weight:700; color:var(--wine); white-space:nowrap; }
+  .quote{ background:#FFF8EA; border:1px solid #E8D6B4; border-left:1.2mm solid var(--gold);
+          border-radius:1.4mm; padding:2.2mm 3mm; font-size:7.4pt; line-height:1.5; color:#5B4A25; }
+  .quote b{ color:#8A5A0A; }
+  .redline{ background:var(--wine); color:#fff; font-size:7pt; font-weight:600;
+            padding:1.8mm 3mm; border-radius:1.2mm; display:flex; justify-content:space-between; }
+  .ft{ display:flex; justify-content:space-between; font-size:5.9pt; color:#948C7E; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:2.4mm; }
+  .three{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:2.2mm; }
+  .note{ font-size:6.6pt; line-height:1.5; color:#3B3731; }
+  .note b{ color:var(--wine3); }
+  .idea{ display:grid; gap:2mm; background:#FFFDF7; border:1px solid var(--line);
+         border-radius:1.3mm; padding:1.9mm 2.5mm; flex:none; }
+  .idea div{ font-size:6.6pt; line-height:1.45; color:#3B3731; }
+  .idea b{ color:var(--wine2); }
+  .warnbox{ background:var(--tint); border:1px solid #EBC9C3; border-left:1.2mm solid var(--red);
+            border-radius:1.4mm; padding:2mm 2.8mm; font-size:6.6pt; line-height:1.5; color:#6B2A22; }
+  .warnbox b{ color:var(--red); }
+  .kpi{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line);
+        border-bottom:1px solid var(--line); padding:2mm 0; }
+  .kpi div{ text-align:center; border-right:1px solid var(--line); }
+  .kpi div:last-child{ border-right:0; }
+  .kpi .v{ font-family:Arial,Helvetica,sans-serif; font-weight:700; font-size:13pt; color:var(--wine); }
+  .kpi .l{ font-size:6.2pt; color:var(--gray); margin-top:.5mm; line-height:1.3; }
+  .qa{ background:#fff; border:1px solid var(--line); border-radius:1.5mm; padding:2mm 2.4mm 1.7mm; }
+  .qa .q{ font-size:7.1pt; font-weight:700; color:var(--wine); line-height:1.35; display:flex; gap:1.3mm; }
+  .qa .q i{ font-style:normal; background:var(--wine2); color:#fff; font-size:5.7pt;
+            border-radius:.7mm; padding:.35mm 1mm; flex:none; height:fit-content; margin-top:.2mm; }
+  .qa .a{ font-size:6.7pt; line-height:1.45; margin-top:.9mm; color:#33302B; }
+  .qa .a b{ color:var(--ink); }
+  .qgrid{ display:grid; grid-template-columns:1fr 1fr; gap:2mm; }
+  .sell{ display:grid; grid-template-columns:1fr 1fr; gap:2.1mm; }
+  .sellcard{ background:#fff; border:1px solid var(--line); border-radius:1.5mm; padding:2.2mm 2.5mm; }
+  .sellcard h4{ font-size:7.4pt; color:var(--wine); letter-spacing:.6pt; margin-bottom:1.3mm; display:flex; align-items:center; gap:1.2mm; }
+  .sellcard h4 i{ font-style:normal; background:var(--wine2); color:#fff; font-size:5.7pt; border-radius:.6mm; padding:.35mm 1mm; }
+  .sellcard p{ font-size:6.8pt; line-height:1.48; color:#33302B; margin-bottom:.85mm; }
+  .sellcard p b{ color:var(--wine2); }
+  .sellcard ul{ list-style:none; }
+  .sellcard li{ font-size:6.6pt; line-height:1.46; color:#3B3731; padding-left:2.2mm; position:relative; margin-bottom:.45mm; }
+  .sellcard li::before{ content:"·"; position:absolute; left:.5mm; color:var(--wine3); font-weight:700; }
+  .sellcard .b{ background:var(--tint); border-left:.7mm solid var(--red); padding:1mm 1.6mm; font-size:6.2pt; line-height:1.38; color:#6B2A22; margin-top:.7mm; }
+  .tl{ display:flex; flex-direction:column; gap:1.6mm; }
+  .tl .row{ display:flex; gap:2mm; font-size:6.9pt; line-height:1.45; }
+  .tl .d{ flex:none; width:17mm; color:var(--wine3); font-weight:700; }
+  .tl .x{ flex:1; }
+  .tl .x b{ color:var(--wine2); }
+  .side{ display:none; }
+  #gate{ position:fixed; inset:0; z-index:9999; background:linear-gradient(135deg,#081633,#0B1B4D 55%,#002FA7);
+         color:#fff; display:flex; align-items:center; justify-content:center; }
+  #gate .box{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25);
+              border-radius:4mm; padding:10mm 12mm; width:96mm; text-align:center; }
+  #gate .t{ font-family:"SimSun",serif; font-size:18pt; font-weight:700; letter-spacing:2pt; }
+  #gate .s{ font-size:8pt; opacity:.75; margin:2mm 0 6mm; line-height:1.6; }
+  #gate input{ width:100%; padding:2.6mm 3mm; border:1px solid rgba(255,255,255,.35); border-radius:1.5mm;
+               background:rgba(0,0,0,.2); color:#fff; font-size:10pt; text-align:center; outline:none; }
+  #gate button{ margin-top:3mm; width:100%; padding:2.6mm; border:0; border-radius:1.5mm;
+                background:#C08A2D; color:#0B1B4D; font-weight:700; font-size:10pt; cursor:pointer; }
+  #gate .err{ color:#F3C9A0; font-size:7.5pt; height:4mm; margin-top:1.5mm; }
+  @media screen and (min-width:1200px){
+    body{ padding-left:200px; }
+    .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:190px; z-index:60;
+           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:11mm 10px 10mm; overflow:auto; }
+    .side .st{ font-size:14pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
+    .side .ss{ font-size:7.6pt; color:#B9C8DC; line-height:1.55; margin:1.6mm 6px 4mm; }
+    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:3mm 2px 2.2mm; }
+    .side .bt{ font-size:7.6pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 2mm; }
+    .side .li{ display:flex; gap:4px; font-size:9pt; line-height:1.5; color:#EADCCB; margin:1.4mm 4px; }
+    .side .li b{ color:#fff; font-weight:800; white-space:nowrap; }
+    .side .big{ display:flex; align-items:baseline; gap:5px; margin:1.2mm 4px; }
+    .side .big b{ font-size:18pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
+    .side .big span{ font-size:7pt; color:#B9C8DC; }
+    .side .big.red b{ color:#FF8A7A; }
+    .side .kv{ display:flex; justify-content:space-between; gap:5px; font-size:8.4pt; color:#EADCCB; margin:1.5mm 4px; }
+    .side .kv b{ color:#fff; font-weight:800; }
+    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.8pt; line-height:1.4;
+             padding:1.7mm 4px; border-left:2px solid transparent; }
+    .side .nav a:hover{ background:rgba(255,255,255,.08); border-left-color:#C08A2D; color:#fff; }
+  }
+  @media print{ .side,#gate{ display:none !important; } body{ padding-left:0 !important; } }
+  @media screen{ .page{ margin:8mm auto 0; box-shadow:0 2px 12px rgba(0,0,0,.12); } .page:last-of-type{ margin-bottom:10mm; } }
+  @media print{ html,body{ background:#fff; } .bar{ display:none !important; }
+    .page{ margin:0; box-shadow:none; break-after:page; } .page:last-of-type{ break-after:auto; } }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <div class="t">全委 · 董博士材料</div>
+    <div class="s">内部阅示 · 请输入访问密码</div>
+    <input id="pw" type="password" placeholder="输入密码" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">进入</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+<script>
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}
+function unlock(){
+  var v=document.getElementById('pw').value.trim();
+  if(gh(v)==='6ef4c38a'){
+    document.getElementById('gate').style.display='none';
+    try{sessionStorage.setItem('zhao_ok','1');}catch(e){}
+  }else{document.getElementById('err').textContent='密码不对，请重试';}
+}
+try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.display='none';}}catch(e){}
+</script>
+
+<div class="side">
+  <div class="st">10/27 · 11:00</div>
+  <div class="ss">全委 · 董博士<br>内部阅示 · v2</div>
+
+  <div class="blk nav">
+    <div class="bt">目录</div>
+    <a href="#cover">材料说明</a>
+    <a href="#p1">01 四只产品</a>
+    <a href="#p2">02 策略·迭代</a>
+    <a href="#p3">03 追加·交流</a>
+  </div>
+
+  <div class="blk">
+    <div class="bt">先看三件</div>
+    <div class="li"><b>① 归因</b><span>今年钱怎么来</span></div>
+    <div class="li"><b>② 边界</b><span>回撤有没有预案</span></div>
+    <div class="li"><b>③ 节奏</b><span>现在加多少</span></div>
+  </div>
+
+  <div class="blk">
+    <div class="bt">两类产品</div>
+    <div class="big"><b>6.21亿</b><span>四只合计</span></div>
+    <div class="big"><b>+4.5%</b><span>纯 CTA 约</span></div>
+    <div class="big"><b>+9.4%</b><span>CTA+指增 约</span></div>
+    <div class="big red"><b>-2.1/-1.9%</b><span>当前回撤</span></div>
+  </div>
+
+  <div class="blk">
+    <div class="bt">谁答</div>
+    <div class="kv"><b>顾小军</b><span>开场/收束</span></div>
+    <div class="kv"><b>李维佳</b><span>策略/风控</span></div>
+    <div class="kv"><b>庞小强</b><span>条款/额度</span></div>
+  </div>
+</div>
+
+<div class="bar">
+  <div><b>打印设置</b>　A4 纵向　·　边距「无」　·　缩放 100%　·　勾选「背景图形」　·　取消「页眉和页脚」</div>
+  <button onclick="window.print()">打印 / 存为 PDF</button>
+</div>
+
+<!-- ================= 封面 / 材料说明 ================= -->
+<div class="page" id="cover">
+  <div class="hd">
+    <div><div class="t1">全委 · 董博士团队 · 材料说明</div>
+      <div class="t2">致顾小军、庞小强｜10/27 11:00｜董博士 ＋ 5–6 位投资经理｜在管 6.21 亿（9/29）</div></div>
+    <div class="pg">内部阅示<br><b>封面</b></div>
+  </div>
+
+  <div class="quote">
+    <b>各位领导：</b>11:00 这场是<b>销售会</b>，不是汇报会——董博士拍板，但每位 PM 自己下单。材料按“结论 → 归因 → 追加”备好；请重点看四只产品、今年钱从哪来、两次迭代、三档方案。
+  </div>
+
+  <table class="t">
+    <tr><th style="width:24mm">背景</th><td>董博士团队 5–6 位投资经理；在管招享盈冲 CTA1/2 号、朝熠 3/4 号，合计 <b>6.21 亿</b>（2026-09-29）；今年业绩感受好。</td></tr>
+    <tr><th>我们做了什么</th><td>全委董博士 v2（<b>3 页正文＋封面</b>）；另配逐字稿、上场卡。</td></tr>
+    <tr><th>请重点看</th><td><b>P1 四只产品、P2 策略/迭代、P3 追加/8 问</b>；重点看今年钱从哪来、两次迭代、三档方案。</td></tr>
+    <tr><th>讲述逻辑</th><td><b>结论（P1）→ 归因（P2）→ 追加（P3）</b>；先给结果，再给归因，最后给节奏。</td></tr>
+    <tr><th>下一步</th><td>2610 报告/PPT 明天更新后发出；周日下午定稿；周一打印。</td></tr>
+    <tr><th>外发</th><td>本 HTML 可外发预览；<b>访问密码另行告知</b>。客户端密码只防误看，不是加密。</td></tr>
+  </table>
+
+  <div class="three">
+    <div class="card"><div class="note"><b>全委董博士 v2</b><br>3 页；P1 四只、P2 策略/迭代、P3 追加/8 问。</div></div>
+    <div class="card"><div class="note"><b>上台逐字稿</b><br>6 页；顾小军/李维佳/庞小强完整台词。</div></div>
+    <div class="card"><div class="note"><b>代销手册 v3</b><br>8 页正文；P1 速查、P3 策略、P8 7 月回撤。</div></div>
+  </div>
+
+  <div class="note"><b>阅读顺序：</b>P1 四只产品（5′）→ P2 策略/迭代（10′）→ P3 追加/8 问（10′）。<b>会前只看 P1 也够。</b></div>
+
+  <div class="note" style="background:#FFF8EA;border:1px solid #E8D6B4;border-left:1.1mm solid var(--gold);border-radius:1.3mm;padding:2.2mm 3mm;">
+    <b>一句话：</b>不用把每一页都讲完；让每位 PM 听到<b>“今年钱怎么来的、回撤有没有边界、现在加多少合适”</b>，就算成功。<br>
+    <span style="color:#6A7488">涵以致远，德以载行——把每一次回撤，变成可执行的机制升级。</span>
+  </div>
+
+  <div class="card" style="margin-top:3mm">
+    <div class="note"><b>请阅示</b><br>顾小军　李维佳　庞小强</div>
+  </div>
+
+  
+  <div class="ft"><span>ZHAO-2026-10-27-QUANWEI v2　封面/材料说明</span></div>
+</div>
+
+<!-- ================= P1 ================= -->
+<div class="page" id="p1">
+  <div class="hd">
+    <div>
+      <div class="t1">全委 · 董博士团队｜CTA 复盘与追加建议</div>
+      <div class="t2">10/27（二）11:00　｜　董博士 ＋ 5–6 位投资经理　｜　在管：招享盈冲 CTA1/2 号 · 朝熠 3/4 号</div>
+    </div>
+    <div class="pg">内部 · 不外发<br><b>P1</b> / 3</div>
+  </div>
+
+  <div class="toc" style="grid-template-columns:repeat(3,1fr)">
+    <div class="lbl"><b>目录 / CONTENTS</b><span>共 3 页 · 结论 → 归因 → 追加</span></div>
+    <a href="#p1"><b>01 四只产品 · P1</b><span>规模 / 今年 / 回撤</span></a>
+    <a href="#p2"><b>02 策略·迭代 · P2</b><span>CTA / 朝熠 / 两次迭代</span></a>
+    <a href="#p3"><b>03 追加·交流 · P3</b><span>三档 / 8 问 / 流程</span></a>
+  </div>
+
+  <div class="quote">
+    <b>一句话定调：</b>今天不是来"汇报历史"，是来回答一个问题——<b>今年赚的钱是怎么来的，现在还能不能加。</b>先给结果，再给归因，最后给节奏。
+  </div>
+
+  <div class="sec"><span class="no">01</span><span class="tt">先看四只产品（截至 2026-09-29；9/30 以 IMS 复核）</span><span class="sub">规模合计 6.21 亿</span></div>
+  <table class="t">
+    <tr><th style="width:34mm">产品</th><th style="width:26mm">策略</th><th style="width:15mm">规模</th><th style="width:18mm">今年</th><th style="width:21mm">今年最大回撤</th><th style="width:19mm">当前回撤</th><th>一句话定位</th></tr>
+    <tr><td colspan="7" style="background:#EEF3FA;color:#0B1B4D;font-weight:800;padding:1.2mm 2mm">纯 CTA｜招享盈冲 CTA1/2 号</td></tr>
+    <tr><td class="k">招享盈冲 CTA1 号</td><td>纯 CTA</td><td class="num">0.95 亿</td><td class="num">+4.46%</td><td class="num">-6.81%</td><td class="num">-2.07%</td><td>低 β、中高波；1 月见底，7–9 月修复</td></tr>
+    <tr><td class="k">招享盈冲 CTA2 号</td><td>纯 CTA</td><td class="num">1.20 亿</td><td class="num">+4.69%</td><td class="num">-6.77%</td><td class="num">-2.22%</td><td>同策略，批次不同；走势与 1 号基本一致</td></tr>
+    <tr><td colspan="7" style="background:#EEF3FA;color:#0B1B4D;font-weight:800;padding:1.2mm 2mm">CTA＋指增｜朝熠锐进 3/4 号</td></tr>
+    <tr><td class="k">朝熠锐进 3 号</td><td>CTA＋指增</td><td class="num">1.78 亿</td><td class="num">+9.49%</td><td class="num">-4.67%</td><td class="num">-1.98%</td><td>高 β、高波；指增端放大弹性，9 月继续修复</td></tr>
+    <tr><td class="k">朝熠锐进 4 号</td><td>CTA＋指增</td><td class="num">2.28 亿</td><td class="num">+9.26%</td><td class="num">-4.70%</td><td class="num">-1.86%</td><td>同策略，规模最大；适合能承受波动的钱</td></tr>
+  </table>
+
+  <div class="kpi">
+    <div><div class="v">6.21 亿</div><div class="l">四只合计<br>（9/29）</div></div>
+    <div><div class="v">+4.5%</div><div class="l">纯 CTA 两只<br>今年约</div></div>
+    <div><div class="v">+9.4%</div><div class="l">CTA+指增 两只<br>今年约</div></div>
+    <div><div class="v">-2.1 / -1.9%</div><div class="l">当前回撤<br>纯 CTA / CTA+指增</div></div>
+  </div>
+
+  <div class="warnbox">
+    <b>口径：</b>“今年约 10%”是<b>成益 1 号（CTA＋中性）</b>截至 9/30 的 +10.60%，<b>不是</b>这四只。四只分两类：纯 CTA 两只 +4.5% 左右，CTA+指增两只 +9.5% 左右；两类风险收益不同，<b>不混在一起算加权</b>。
+  </div>
+
+  <div class="sec"><span class="no">02</span><span class="tt">今年的钱从哪来：一条修复曲线，不是一路顺风</span><span class="sub">1 月见底 → 2 月填坑 → 7–8 月 CTA 修复</span></div>
+  <div class="three">
+    <div class="card">
+      <div class="note"><b>1 月：坑</b><br>盈冲 1 号 -4.37%、朝熠 3 号 -4.59%。原因是旧策略偏"短周期＋反转"，错过黄金、铜的 5–10 天长趋势；不是模型失效，是打法与行情错配。</div>
+    </div>
+    <div class="card">
+      <div class="note"><b>2–6 月：填坑</b><br>1/27 完成第一次迭代（趋势权重 11.4%→30%、中短:中长 1.5:1–1:1、硬止损）；2 月填回，3–6 月震荡向上。</div>
+    </div>
+    <div class="card">
+      <div class="note"><b>7–8 月：修复加速</b><br>盈冲 7 月 +3.26%、8 月 +4.11%；朝熠 8 月 +6.28%。4 月第二次迭代（波动性控制＋趋势敞口动态识别）开始见效；朝熠 9 月继续修复（当前 -1.9%）。</div>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:.2mm">
+    <b>给 PM 的一句话：</b>今年的收益不是"突然会赚钱了"，是<b>1 月把打法改对了、4 月把信号管住了</b>，再叠加 7–8 月的趋势行情。三件事叠在一起，才有这条修复曲线。
+  </div>
+
+  <div class="sec"><span class="no">03</span><span class="tt">逐月看：1 月是坑，2 月填，7–8 月加速</span><span class="sub">产品口径，2026 年，%</span></div>
+  <table class="t">
+    <tr><th style="width:26mm">月份</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+    <tr><td class="k">盈冲 1 号</td><td class="num">-4.37</td><td class="num">+0.03</td><td class="num">-1.83</td><td class="num">+1.63</td><td class="num">-1.08</td><td class="num">-0.07</td><td class="num">+3.26</td><td class="num">+4.11</td></tr>
+    <tr><td class="k">朝熠 3 号</td><td class="num">-4.59</td><td class="num">+2.82</td><td class="num">-1.34</td><td class="num">+2.11</td><td class="num">+1.92</td><td class="num">+1.13</td><td class="num">-2.26</td><td class="num">+6.28</td></tr>
+  </table>
+  <div class="note">1 月是坑；2 月填回；7–8 月 CTA 修复加速。朝熠 7 月被指增拖累（-2.26%），8 月补回（+6.28%）。<b>9 月（至 9/29）：盈冲约 +3.0%、朝熠约 +3.5%</b>（按 YTD 差估算）。</div>
+
+  <div class="note"><b>一句话选产品：</b>要稳选盈冲（纯 CTA），要弹性选朝熠（CTA＋指增）；不重复加同一风格，两只都配按 6:4。详见 P2。</div>
+
+  
+  <div class="ft"><span>ZHAO-2026-10-27-QUANWEI v2　P1 四只产品</span></div>
+</div>
+
+<!-- ================= P2 策略/迭代 ================= -->
+<div class="page" id="p2">
+  <div class="hd">
+    <div><div class="t1">策略与迭代 · 为什么今年突然好</div>
+      <div class="t2">14 年实盘｜6 次金牛｜72 亿｜68/51｜朝熠＝CTA＋指增（比例待常青）</div></div>
+    <div class="pg">内部 · 不外发<br><b>P2</b> / 3</div>
+  </div>
+
+  <div class="quote"><b>一句话卖点：</b>同样做 CTA，我们 <b>14 年实盘</b>、与同业相关性 0.2–0.4；同样做指增，超额 <b>90% 以上来自残差</b>；四只产品差别在配比，不在大脑。</div>
+
+  <div class="sec"><span class="no">01</span><span class="tt">CTA：14 年实盘，双向交易</span><span class="sub">趋势做引擎 / 反转做平滑 / 基本面套利做压舱</span></div>
+  <div class="card">
+    <div class="note" style="font-size:7pt;line-height:1.58">
+      <b>怎么赚：</b>商品、股指、国债期货上做双向交易；涨有趋势做多、跌有趋势做空，不依赖股票涨跌。当前约 <b>5:4:1</b>（趋势 50%＋、反转 40%、基本面 10%）。<br>
+      <b>覆盖：</b>40+ 个流动性最好的商品与股指期货；中短周期为主，迭代后覆盖 3–15 天。<br>
+      <b>风控：</b>保证金 10%–25%（纯 CTA）、合同上限 30%；三层约束：整体 ≤30%、板块 ≤5%、单品种 ≤10%。<br>
+      <b>相关性与容量：</b>与同业 CTA 相关性 <b>0.2–0.4</b>；容量约 <b>50 亿</b>，当前约 15 亿（8/31）。<br>
+      <b>边界：</b>商品快速切换期会磨损；纯 CTA 周频回撤可达两位数。
+    </div>
+  </div>
+
+  <div class="sec"><span class="no">02</span><span class="tt">朝熠：CTA＋指增，为什么波动大</span><span class="sub">CTA＋指增（底层含中性层；比例待常青）</span></div>
+  <div class="two">
+    <div class="card"><div class="note" style="font-size:7pt"><b>结构决定波动：</b>CTA＋指增（底层含中性层；<b>具体比例待常青</b>）。指增端接近满仓 β，放大弹性；CTA 端减震，中性端平滑。<b>三层叠在一起，波动一定高于纯 CTA。</b><br><b>2000 指增（9/30）：</b>今年 +11.25%、超额 +14.24%，最大回撤 -26.33%——高弹性，不能当低波替代。</div></div>
+    <div class="card"><div class="note" style="font-size:7pt"><b>四只怎么选：</b>要稳选盈冲（纯 CTA，当前 -2.1%）；要弹性选朝熠（CTA＋指增，当前 -1.9%）；要互补，先看已持有哪只，不重复加同一风格。<br><b>口径：</b>朝熠的产品回撤（历史 -8.0%、今年 -4.7%）和 CTA 子策略回撤（33%）不是一回事。</div></div>
+  </div>
+
+  <div class="sec"><span class="no">03</span><span class="tt">两次迭代：先改比例，再改信号</span><span class="sub">1/27 均衡化 1.0 → 4 月 均衡化 2.0</span></div>
+  <div class="two">
+    <div class="card"><div class="note" style="font-size:7pt"><b>1/27｜均衡化 1.0（大类比例）</b><br>趋势 11.4%→约 30%；非趋势 60%→约 36%；基本面 30%→约 33%；中短:中长 1.5:1–1:1；黄金等高位品种加硬止损。</div></div>
+    <div class="card"><div class="note" style="font-size:7pt"><b>4 月｜均衡化 2.0（信号层）</b><br>每个底层信号单独控波动；趋势敞口从静态标签改每日动态识别；比例 361→541；目标 combo 长期偏趋势正敞口 = long gamma。</div></div>
+  </div>
+
+  <div class="sec"><span class="no">04</span><span class="tt">回撤与修复：把最难看的一段先讲掉</span><span class="sub">产品口径，不用 CTA 子策略口径</span></div>
+  <table class="t">
+    <tr><th style="width:34mm">产品</th><th style="width:34mm">历史最大回撤</th><th style="width:34mm">当前回撤</th><th>怎么说</th></tr>
+    <tr><td class="k">盈冲 CTA1/2 号</td><td class="num">-11.11% / -11.29%</td><td class="num">-2.07% / -2.22%</td><td>7 月 +3.26%、8 月 +4.11%、9 月约 +3.0%；坑填回大半。</td></tr>
+    <tr><td class="k">朝熠 3/4 号</td><td class="num">-8.00% / -8.52%</td><td class="num">-1.98% / -1.86%</td><td>8 月 +6.28%、9 月约 +3.5%；9 月继续修复。</td></tr>
+  </table>
+  <div class="warnbox"><b>别说错：</b>朝熠 CTA 子策略回撤 33%，产品端历史 -8.0%、今年 -4.7%；两个口径不能混。</div>
+
+  <div class="sec"><span class="no">05</span><span class="tt">上一轮亏在哪：拆到品种</span><span class="sub">2025/11–2026/2，底层产品费前 -3.24%</span></div>
+  <div class="note" style="font-size:6.8pt;line-height:1.5"><b>亏损侧：</b>黄金 -1.25｜阴极铜 -1.11｜镍 -0.48｜其他 -4.05；<b>盈利侧：</b>烧碱 +0.80｜棉花 +0.44｜PTA +0.22｜铝 +0.19｜其他 +0.55；<b>结构：</b>中性 +2.48%｜CTA -5.70%｜合计 -3.24%。<b>知道亏在哪，才敢说改了什么。</b></div>
+
+  <div class="sec"><span class="no">06</span><span class="tt">CTA 当前怎么看：短 / 中 / 长</span><span class="sub">只讲环境，不把一两个月当理由</span></div>
+  <div class="three">
+    <div class="card"><div class="note" style="font-size:6.8pt"><b>短期｜</b>商品波动率从低位回升，趋势连续性改善；股指 CTA 受益于权益波动。但一个季度的行情不足以证明能力。</div></div>
+    <div class="card"><div class="note" style="font-size:6.8pt"><b>中期｜</b>板块分化（贵金属/有色/能化/黑色）＋政策与地缘扰动，趋势和反转都有机会；中短周期 3–15 天更适配。</div></div>
+    <div class="card"><div class="note" style="font-size:6.8pt"><b>长期｜</b>低相关配置需求上升，CTA 容量稀缺；我们容量 50 亿、当前 15 亿，不牺牲收益质量换规模。</div></div>
+  </div>
+  <div class="note" style="margin-top:1mm"><b>基差备注：</b>截至 10/23，IC 年化贴水约 <b>6.9%</b>（贴水收窄），对中性端偏友好；朝熠里的中性层也受益。这是环境备注，不是加仓理由。</div>
+
+  <div class="note"><b>PPT 图版（更新后插入）：</b>P5 盈冲 CTA1｜P6 多元信号｜P9 成益 1 号｜CTA+中性页｜P7 系统升级｜P8 长周期验证。<br><b>讲法：</b>先 P5/P6“CTA 做得挺好”→ P9“成益 1 号也不差”→ CTA+中性“长期稳”→ P7/P8“迭代升级”。截图待更新 PPT 发来后替换。</div>
+
+  
+  <div class="ft"><span>ZHAO-2026-10-27-QUANWEI v2　P2 策略/迭代</span></div>
+</div>
+
+<!-- ================= P3 追加/交流 ================= -->
+<div class="page" id="p3">
+  <div class="hd">
+    <div><div class="t1">为什么现在加 · 怎么加 · 必答 8 问</div>
+      <div class="t2">董博士拍板，但每位 PM 自己下单；这一页是给他们“敢下单”的理由</div></div>
+    <div class="pg">内部 · 不外发<br><b>P3</b> / 3</div>
+  </div>
+
+  <div class="sec"><span class="no">01</span><span class="tt">为什么现在加：四个理由</span><span class="sub">不讲宏大叙事，只讲组合</span></div>
+  <div class="idea" style="grid-template-columns:repeat(4,1fr)">
+    <div><b>波动率回升｜</b>商品趋势机会比 2025 年多；股指 CTA 也有用。</div>
+    <div><b>容量还有｜</b>CTA 15 亿 / 容量 50 亿；到 80% 预警、100% 暂停。</div>
+    <div><b>低相关｜</b>与股票、与现有中性低相关；是分散腿，不是替代。</div>
+    <div><b>坑已填｜</b>盈冲 -2.1%、朝熠 -1.9%；9 月继续修复。</div>
+  </div>
+  <div class="note"><b>内部读数：</b>CTA 环境积极；IC 年化贴水 <b>6.9%</b>（截至 10/23，对中性端友好）。只作环境备注，不把一两个月当加仓理由。</div>
+
+  <div class="sec"><span class="no">02</span><span class="tt">怎么加：三档，先小后大</span><span class="sub">不一次要满</span></div>
+  <table class="t">
+    <tr><th style="width:20mm">档位</th><th style="width:22mm">金额</th><th style="width:34mm">选哪只</th><th style="width:40mm">节奏</th><th>适合谁</th></tr>
+    <tr><td class="k">试水</td><td class="num">5000 万</td><td>盈冲（纯 CTA）</td><td>下个开放日一次</td><td>第一次配、先看体验</td></tr>
+    <tr><td class="k">标准</td><td class="num">1–2 亿</td><td>盈冲 / 朝熠</td><td>分两批，间隔一个开放日</td><td>已有 CTA 经验、能承受波动</td></tr>
+    <tr><td class="k">加码</td><td class="num">3–5 亿</td><td>两只组合（6:4）</td><td>分三批，跑一个季度</td><td>长期配置、要低相关</td></tr>
+  </table>
+
+  <div class="sec"><span class="no">03</span><span class="tt">必答 8 问：4 个产品 + 4 个 CTA</span><span class="sub">先归类，再答；不猜、不承诺</span></div>
+  <div class="qgrid">
+    <div class="qa"><div class="q"><i>Q1</i>今年为什么突然好？</div><div class="a">不是突然：1 月改比例、4 月改信号，7–8 月趋势行情兑现。<b>三次迭代＋一次行情</b>。</div></div>
+    <div class="qa"><div class="q"><i>Q2</i>能持续吗？</div><div class="a">不承诺。能做的是：均衡配置、动态趋势敞口、硬止损；<b>把“靠什么赚”说清楚</b>，不靠单一行情。</div></div>
+    <div class="qa"><div class="q"><i>Q3</i>1 月为什么亏那么多？</div><div class="a">旧策略偏短周期＋反转，错过 5–10 天长趋势；<b>不是模型失效，是打法错配</b>。1/27 已改。</div></div>
+    <div class="qa"><div class="q"><i>Q4</i>朝熠 3 去年 11 月回撤 33%？</div><div class="a">您说的是 CTA 子策略归因；<b>产品端历史 -8.0%、今年 -4.7%</b>，9 月继续修复。两个口径不能混。</div></div>
+    <div class="qa"><div class="q"><i>Q5</i>跟同业 CTA 比，特点在哪？</div><div class="a">相关性 <b>0.2–0.4</b>；结构 <b>5:4:1</b>；三层保证金（整体 ≤30%、板块 ≤5%、单品种 ≤10%）＋波动率自适应。</div></div>
+    <div class="qa"><div class="q"><i>Q6</i>现在加是不是追高？</div><div class="a">CTA 是双向交易，不是押商品继续涨；盈冲 -2.1%、朝熠 -1.9%，不是高点。<b>分批，不一把梭</b>。</div></div>
+    <div class="qa"><div class="q"><i>Q7</i>容量还有多少？</div><div class="a">CTA 容量 <b>50 亿</b>，当前 15 亿；到 80% 预警、100% 暂停募集。不为规模牺牲收益质量。</div></div>
+    <div class="qa"><div class="q"><i>Q8</i>CTA＋指增为什么波动大？</div><div class="a"><b>CTA＋指增</b>（底层含中性层；具体比例待常青）；指增端接近满仓 β，放大弹性；CTA 减震、中性平滑，但整体仍是高波品种。</div></div>
+  </div>
+
+  <div class="sec"><span class="no">04</span><span class="tt">跟董博士交流，流程怎么走</span><span class="sub">不挑钱的大小，挑钱的期限</span></div>
+  <div class="idea" style="grid-template-columns:repeat(4,1fr)">
+    <div><b>今天｜</b>确认产品与档位，留下对接人。</div>
+    <div><b>T+1｜</b>开户/适当性/合同，我们配合材料。</div>
+    <div><b>开放日｜</b>申购落地，不催单。</div>
+    <div><b>季度｜</b>复盘，再谈加。</div>
+  </div>
+
+  <div class="quote"><b>收束只说一句：</b>“给我们 1–2 亿，跑一个季度；跑完再谈加。我们不靠今天的说服，靠下个季度的净值。”</div>
+  
+  
+  <div class="ft"><span>ZHAO-2026-10-27-QUANWEI v2　P3 追加/交流</span></div>
+</div>
+
+</body>
+</html>
