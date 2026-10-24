@@ -13,7 +13,7 @@
     --amber:#FFF7E8; --red:#C0392B; --tint:#EEF3FA; --green:#1E7F5C;
   }
   html,body{ background:var(--paper); color:var(--ink);
-    font-family:"Microsoft YaHei","PingFang SC",sans-serif; }
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif; font-weight:500; -webkit-font-smoothing:antialiased; }
   .bar{ background:#241F1B; color:#F3EFE6; padding:9px 18px; font-size:12.5px;
         display:flex; justify-content:space-between; align-items:center; gap:18px; }
   .bar b{ color:#E8C79A; }
@@ -113,15 +113,24 @@
                 background:#C08A2D; color:#0B1B4D; font-weight:700; font-size:10pt; cursor:pointer; }
   #gate .err{ color:#F3C9A0; font-size:7.5pt; height:4mm; margin-top:1.5mm; }
   @media screen and (min-width:1200px){
-    body{ padding-left:168px; }
-    .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:158px; z-index:60;
-           background:#241518; color:#fff; padding:14mm 10px 10mm; overflow:auto; }
-    .side .t{ font-family:"SimSun",serif; font-size:13pt; color:#E8C79A; letter-spacing:3pt; margin:0 8px 4mm; }
-    .side .s{ font-size:6.2pt; color:#B9A99B; margin:0 8px 6mm; line-height:1.5; }
-    .side a{ display:block; color:#EADCCB; text-decoration:none; font-size:7.6pt; line-height:1.4;
-             padding:2.2mm 8px; border-radius:1.2mm; border-left:2px solid transparent; }
-    .side a:hover{ background:rgba(255,255,255,.07); border-left-color:#C08A2D; }
-    .side a b{ display:block; font-size:6.2pt; color:#A89484; font-weight:400; margin-top:.4mm; }
+    body{ padding-left:200px; }
+    .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:190px; z-index:60;
+           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:11mm 10px 10mm; overflow:auto; }
+    .side .st{ font-size:14pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
+    .side .ss{ font-size:7.6pt; color:#B9C8DC; line-height:1.55; margin:1.6mm 6px 4mm; }
+    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:3mm 2px 2.2mm; }
+    .side .bt{ font-size:7.6pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 2mm; }
+    .side .li{ display:flex; gap:4px; font-size:9pt; line-height:1.5; color:#EADCCB; margin:1.4mm 4px; }
+    .side .li b{ color:#fff; font-weight:800; white-space:nowrap; }
+    .side .big{ display:flex; align-items:baseline; gap:5px; margin:1.2mm 4px; }
+    .side .big b{ font-size:18pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
+    .side .big span{ font-size:7pt; color:#B9C8DC; }
+    .side .big.red b{ color:#FF8A7A; }
+    .side .kv{ display:flex; justify-content:space-between; gap:5px; font-size:8.4pt; color:#EADCCB; margin:1.5mm 4px; }
+    .side .kv b{ color:#fff; font-weight:800; }
+    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.8pt; line-height:1.4;
+             padding:1.7mm 4px; border-left:2px solid transparent; }
+    .side .nav a:hover{ background:rgba(255,255,255,.08); border-left-color:#C08A2D; color:#fff; }
   }
   @media print{ .side,#gate{ display:none !important; } body{ padding-left:0 !important; } }
   @media screen{ .page{ margin:8mm auto 0; box-shadow:0 2px 12px rgba(0,0,0,.12); } .page:last-of-type{ margin-bottom:10mm; } }
@@ -153,12 +162,38 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 </script>
 
 <div class="side">
-  <div class="t">目录</div>
-  <div class="s">10/27 全委 · 董博士<br>内部阅示 · v2</div>
-  <a href="#cover">材料说明<b>背景 / 阅示 / 下一步</b></a>
-  <a href="#p1">01 四只产品<b>规模 / 今年 / 回撤</b></a>
-  <a href="#p2">02 策略·迭代<b>CTA / 朝熠 / 两次迭代</b></a>
-  <a href="#p3">03 追加·交流<b>三档 / 8 问 / 流程</b></a>
+  <div class="st">10/27 · 11:00</div>
+  <div class="ss">全委 · 董博士<br>内部阅示 · v2</div>
+
+  <div class="blk">
+    <div class="bt">先看三件</div>
+    <div class="li"><b>① 归因</b><span>今年钱怎么来</span></div>
+    <div class="li"><b>② 边界</b><span>回撤有没有预案</span></div>
+    <div class="li"><b>③ 节奏</b><span>现在加多少</span></div>
+  </div>
+
+  <div class="blk">
+    <div class="bt">三个数</div>
+    <div class="big"><b>6.21亿</b><span>四只合计</span></div>
+    <div class="big"><b>+7.7%</b><span>加权今年</span></div>
+    <div class="big red"><b>-2.1%</b><span>盈冲当前</span></div>
+    <div class="big red"><b>-1.9%</b><span>朝熠当前</span></div>
+  </div>
+
+  <div class="blk">
+    <div class="bt">谁答</div>
+    <div class="kv"><b>顾小军</b><span>开场/收束</span></div>
+    <div class="kv"><b>李维佳</b><span>策略/风控</span></div>
+    <div class="kv"><b>庞小强</b><span>条款/额度</span></div>
+  </div>
+
+  <div class="blk nav">
+    <div class="bt">目录</div>
+    <a href="#cover">材料说明</a>
+    <a href="#p1">01 四只产品</a>
+    <a href="#p2">02 策略·迭代</a>
+    <a href="#p3">03 追加·交流</a>
+  </div>
 </div>
 
 <div class="bar">
@@ -180,7 +215,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <table class="t">
     <tr><th style="width:24mm">背景</th><td>董博士团队 5–6 位投资经理；在管招享盈冲 CTA1/2 号、朝熠 3/4 号，合计 <b>6.21 亿</b>（2026-09-29）；今年业绩感受好。</td></tr>
-    <tr><th>我们做了什么</th><td>全委董博士 v2（<b>3 页正文＋封面</b>）；另配上台逐字稿、代销上会手册、上场卡。</td></tr>
+    <tr><th>我们做了什么</th><td>全委董博士 v2（<b>3 页正文＋封面</b>）；另配逐字稿、上场卡。</td></tr>
     <tr><th>请重点看</th><td><b>P1 四只产品、P2 策略/迭代、P3 追加/8 问</b>；重点看今年钱从哪来、两次迭代、三档方案。</td></tr>
     <tr><th>讲述逻辑</th><td><b>结论（P1）→ 归因（P2）→ 追加（P3）</b>；先给结果，再给归因，最后给节奏。</td></tr>
     <tr><th>下一步</th><td>2610 报告/PPT 明天更新后发出；周日下午定稿；周一打印。</td></tr>
