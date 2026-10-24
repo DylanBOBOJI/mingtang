@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>招行上会 PPT · 关键页</title>
+<style>
+  :root{--navy:#0B1B4D;--blue:#002FA7;--gold:#B7791F;--ink:#1E2A44;--gray:#6A7488;--line:#DCE3EE;--bg:#F4F6F9;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;padding:24px 14px 40px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .hd{background:linear-gradient(115deg,#081633,#0B1B4D 55%,#002FA7);color:#fff;border-radius:14px;padding:24px 26px;display:flex;justify-content:space-between;gap:16px;align-items:flex-end}
+  .hd h1{font-family:"SimSun",serif;font-size:22px;letter-spacing:1px}
+  .hd p{font-size:12.5px;opacity:.85;line-height:1.7;margin-top:8px}
+  .hd .tag{font-size:11.5px;color:#E8C79A;border:1px solid rgba(232,199,154,.5);border-radius:99px;padding:4px 10px;white-space:nowrap}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:16px;box-shadow:0 4px 14px rgba(11,27,77,.05)}
+  .card h2{font-size:15px;color:var(--navy);margin-bottom:6px}
+  .card .s{font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:10px}
+  .card img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:6px}
+  .note{background:#FFF8EA;border:1px solid #E8D6B4;border-left:4px solid var(--gold);border-radius:10px;padding:13px 15px;font-size:12.5px;line-height:1.8;color:#4A3A22;margin-top:16px}
+  .note b{color:#8A5A12}
+  .ft{font-size:11.5px;color:var(--gray);margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  a{color:var(--blue)}
+  #gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#081633,#0B1B4D 55%,#002FA7);display:flex;align-items:center;justify-content:center;padding:16px}
+  #gate .gbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:28px 30px;width:360px;max-width:100%;text-align:center;color:#fff}
+  #gate .gt{font-family:"SimSun",serif;font-size:20px;font-weight:700;letter-spacing:2px}
+  #gate .gs{font-size:12px;opacity:.78;margin:8px 0 18px}
+  #gate input{width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:rgba(0,0,0,.2);color:#fff;font-size:14px;text-align:center;outline:none}
+  #gate button{margin-top:10px;width:100%;padding:10px;border:0;border-radius:8px;background:#C08A2D;color:#0B1B4D;font-weight:700;font-size:14px;cursor:pointer}
+  #gate .ge{color:#F3C9A0;font-size:12px;height:16px;margin-top:6px}
+  @media print{#gate{display:none!important}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gbox">
+    <div class="gt">招行上会 PPT</div>
+    <div class="gs">内部阅示 · 请输入访问密码</div>
+    <input id="pw" type="password" placeholder="输入密码" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">进入</button>
+    <div class="ge" id="err"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hd">
+    <div>
+      <h1>招行上会 PPT · 关键页</h1>
+      <p>只摘老板要看的页：中性业绩、7 月风控补强、团队/积累。完整 PPT 明天更新后发。</p>
+    </div>
+    <div class="tag">内部阅示 · 请勿外传</div>
+  </div>
+
+  <div class="card">
+    <h2>P15｜中性策略：本次纯中性样本</h2>
+    <div class="s">38.03% / 9.32% / 5.21% / 1.79 / -5.30%（2023.1–2026.8，周频托管复核）；对账 35.63% vs 34.67%。<b>本页与 V9 8/31 一致。</b></div>
+    <img src="ppt/p15.png" alt="中性策略 P15">
+  </div>
+
+  <div class="card">
+    <h2>P18｜风控框架补强：从“市值硬控”到“多维管理”</h2>
+    <div class="s">7 月后对流动性/残差波动率设上限；<b>size 一直 ±0.2</b>；集中度 1%→0.5–0.3% 是 7 月临时压降，8 月底调回。完整 7 月归因见上会手册附录 A。</div>
+    <img src="ppt/p18.png" alt="风控框架补强 P18">
+  </div>
+
+  <div class="card">
+    <h2>P14｜中性策略原理：只承担筛选过的 Alpha 风险</h2>
+    <div class="s">中性不是不承担风险，而是只承担经过筛选的 Alpha 风险；净值仍会波动，也会经历回撤。</div>
+    <img src="ppt/p14.png" alt="中性策略原理 P14">
+  </div>
+
+  <div class="card">
+    <h2>P4｜核心团队：清华一脉、千禧/世坤体系</h2>
+    <div class="s">三位合伙人共事 20 年；秦志宇/顾小军/李维佳均 20 年量化经验；投研 IT 51/68。</div>
+    <img src="ppt/p4.png" alt="核心团队 P4">
+  </div>
+
+  <div class="card">
+    <h2>P3｜14 年量化积累（2012 起步 / 2013 成立）</h2>
+    <div class="s">公司成立 <b>13 年</b>（2013-08-28）；团队 2012 年起做 CTA，14 年量化积累；未发生重大风险事件。</div>
+    <img src="ppt/p3.png" alt="14年积累 P3">
+  </div>
+
+  <div class="card">
+    <h2>P19｜总结与展望：风控前置、投研先行</h2>
+    <div class="s">量化已是重要定价力量；不追求单次最完美，保证风控逻辑与响应机制可复制；投研先行、规模是自然结果。</div>
+    <img src="ppt/p19.png" alt="总结与展望 P19">
+  </div>
+
+  <div class="note">
+    <b>为什么没放 P17“四重叠加”？</b>该页还是旧版口径（“流动性/波动率仅软约束”），与 V9 的“7 月后 0.6 硬顶”容易打架。<b>明天 PPT 更新时按 09 清单改成 V9 三因版</b>：① 市场波动放大；② 风格因子共振；③ 极端行情 Pure Alpha 也回撤；并把“软控”写成“7 月前仅软约束、7 月后加 0.6 硬顶”。改完我再替换本页。<br>
+    <b>P5 规模页</b>（80 亿/72 人）与 V9 的 72 亿/68 人也不一致，明天统一成“72 亿（剔除嵌套）/68 人；含嵌套约 80 亿/全口径 72 人”后再放。
+  </div>
+
+  <div class="ft">
+    <span>2026-10-24｜丁一｜图片来源：招行上会 PPT（8/31 版）｜内部材料</span>
+    <span><a href="index.html">返回材料包</a> · <a href="review.html">上会手册</a></span>
+  </div>
+</div>
+
+<script>
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}
+function unlock(){
+  var v=document.getElementById('pw').value.trim();
+  if(gh(v)==='d7ea78a5'||gh(v)==='7238631b'){
+    document.getElementById('gate').style.display='none';
+    try{sessionStorage.setItem('zhao_ok','1');}catch(e){}
+  }else{document.getElementById('err').textContent='密码不对，请重试';}
+}
+try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.display='none';}}catch(e){}
+</script>
+</body>
+</html>
