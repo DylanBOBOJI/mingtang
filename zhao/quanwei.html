@@ -115,27 +115,41 @@
   @media screen and (min-width:1200px){
     body{ padding-left:200px; }
     .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:190px; z-index:60;
-           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:11mm 10px 10mm; overflow:auto; }
-    .side .st{ font-size:14pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
-    .side .ss{ font-size:7.6pt; color:#B9C8DC; line-height:1.55; margin:1.6mm 6px 4mm; }
-    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:3mm 2px 2.2mm; }
-    .side .bt{ font-size:7.6pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 2mm; }
-    .side .li{ display:flex; gap:4px; font-size:9pt; line-height:1.5; color:#EADCCB; margin:1.4mm 4px; }
+           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:9mm 8px 8mm; overflow:auto; }
+    .side .st{ font-size:12.5pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
+    .side .ss{ font-size:7pt; color:#B9C8DC; line-height:1.45; margin:1.2mm 6px 3mm; }
+    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:2mm 2px 1.4mm; }
+    .side .bt{ font-size:7pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 1.2mm; }
+    .side .li{ display:flex; gap:4px; font-size:8.4pt; line-height:1.4; color:#EADCCB; margin:1mm 4px; }
     .side .li b{ color:#fff; font-weight:800; white-space:nowrap; }
-    .side .big{ display:flex; align-items:baseline; gap:5px; margin:1.2mm 4px; }
-    .side .big b{ font-size:18pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
-    .side .big span{ font-size:7pt; color:#B9C8DC; }
+    .side .big{ display:flex; align-items:baseline; gap:4px; margin:.8mm 4px; }
+    .side .big b{ font-size:15pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
+    .side .big span{ font-size:6.6pt; color:#B9C8DC; }
     .side .big.red b{ color:#FF8A7A; }
-    .side .kv{ display:flex; justify-content:space-between; gap:5px; font-size:8.4pt; color:#EADCCB; margin:1.5mm 4px; }
+    .side .kv{ display:flex; justify-content:space-between; gap:4px; font-size:7.8pt; color:#EADCCB; margin:1mm 4px; }
     .side .kv b{ color:#fff; font-weight:800; }
-    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.8pt; line-height:1.4;
-             padding:1.7mm 4px; border-left:2px solid transparent; }
+    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.2pt; line-height:1.3;
+             padding:1.2mm 4px; border-left:2px solid transparent; }
     .side .nav a:hover{ background:rgba(255,255,255,.08); border-left-color:#C08A2D; color:#fff; }
   }
   @media print{ .side,#gate{ display:none !important; } body{ padding-left:0 !important; } }
   @media screen{ .page{ margin:8mm auto 0; box-shadow:0 2px 12px rgba(0,0,0,.12); } .page:last-of-type{ margin-bottom:10mm; } }
   @media print{ html,body{ background:#fff; } .bar{ display:none !important; }
     .page{ margin:0; box-shadow:none; break-after:page; } .page:last-of-type{ break-after:auto; } }
+@media print{ .page{ zoom:1 !important; } }
+
+/* readability */
+#cover table.t td, #cover .note { font-size:8.0pt !important; line-height:1.5; }
+#p1 table.t td, #p1 .note, #p1 .card .note { font-size:7.8pt !important; line-height:1.5; }
+#p2 table.t td, #p2 .note { font-size:7.5pt !important; line-height:1.5; }
+#p3 .qa .a { font-size:7.2pt !important; line-height:1.5; }
+#p3 .qa .q { font-size:7.8pt !important; }
+#p3 .card .note { font-size:7.2pt !important; }
+
+.page img{ cursor:zoom-in; }
+#lb{ position:fixed; inset:0; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; z-index:99999; padding:18px; }
+#lb.on{ display:flex; }
+#lb img{ max-width:96vw; max-height:92vh; box-shadow:0 10px 40px rgba(0,0,0,.55); }
 </style>
 </head>
 <body>
@@ -210,29 +224,23 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   </div>
 
   <div class="quote">
-    <b>各位领导：</b>11:00 这场是<b>销售会</b>，不是汇报会——董博士拍板，但每位 PM 自己下单。材料按“结论 → 归因 → 追加”备好；请重点看四只产品、今年钱从哪来、两次迭代、三档方案。
+    <b>各位领导：</b>11:00 这场是<b>销售会</b>：董博士拍板，每位 PM 自己下单。材料按“结论 → 归因 → 追加”备好；下面按四只产品、今年钱从哪来、两次迭代、三档方案展开。
   </div>
 
   <table class="t">
     <tr><th style="width:24mm">背景</th><td>董博士团队 5–6 位投资经理；在管招享盈冲 CTA1/2 号、朝熠 3/4 号，合计 <b>6.21 亿</b>（2026-09-29）；今年业绩感受好。</td></tr>
-    <tr><th>我们做了什么</th><td>全委董博士 v2（<b>3 页正文＋封面</b>）；另配逐字稿、上场卡。</td></tr>
-    <tr><th>请重点看</th><td><b>P1 四只产品、P2 策略/迭代、P3 追加/8 问</b>；重点看今年钱从哪来、两次迭代、三档方案。</td></tr>
-    <tr><th>讲述逻辑</th><td><b>结论（P1）→ 归因（P2）→ 追加（P3）</b>；先给结果，再给归因，最后给节奏。</td></tr>
-    <tr><th>下一步</th><td>2610 报告/PPT 明天更新后发出；周日下午定稿；周一打印。</td></tr>
-    <tr><th>外发</th><td>本 HTML 可外发预览；<b>访问密码另行告知</b>。客户端密码只防误看，不是加密。</td></tr>
+    <tr><th>我们做了什么</th><td>全委董博士 v2（<b>3 页正文＋封面</b>）。</td></tr>
   </table>
 
-  <div class="three">
-    <div class="card"><div class="note"><b>全委董博士 v2</b><br>3 页；P1 四只、P2 策略/迭代、P3 追加/8 问。</div></div>
-    <div class="card"><div class="note"><b>上台逐字稿</b><br>6 页；顾小军/李维佳/庞小强完整台词。</div></div>
-    <div class="card"><div class="note"><b>代销手册 v3</b><br>8 页正文；P1 速查、P3 策略、P8 7 月回撤。</div></div>
+  <div class="idea" style="grid-template-columns:repeat(3,1fr); margin-top:2mm">
+    <div><b>01 先分类｜</b>纯 CTA（盈冲）与 CTA＋指增（朝熠）分开说；不混、不算加权。</div>
+    <div><b>02 再归因｜</b>今年钱从哪来：1 月改比例、4 月改信号、7–8 月行情兑现；两次迭代讲清楚。</div>
+    <div><b>03 后追加｜</b>三档方案按期限与回撤承受力选；分批、控量、不逼单。</div>
   </div>
 
-  <div class="note"><b>阅读顺序：</b>P1 四只产品（5′）→ P2 策略/迭代（10′）→ P3 追加/8 问（10′）。<b>会前只看 P1 也够。</b></div>
-
-  <div class="note" style="background:#FFF8EA;border:1px solid #E8D6B4;border-left:1.1mm solid var(--gold);border-radius:1.3mm;padding:2.2mm 3mm;">
-    <b>一句话：</b>不用把每一页都讲完；让每位 PM 听到<b>“今年钱怎么来的、回撤有没有边界、现在加多少合适”</b>，就算成功。<br>
-    <span style="color:#6A7488">涵以致远，德以载行——把每一次回撤，变成可执行的机制升级。</span>
+  <div style="margin-top:8mm;background:var(--wine);color:#fff;padding:5mm 7mm;border-radius:1.5mm">
+    <div style="font-size:15pt;font-weight:800;letter-spacing:1px">先分类 · 再归因 · 后追加</div>
+    <div style="font-size:8pt;color:#E8C79A;margin-top:1.8mm">纯 CTA 与 CTA＋指增分开说；不混、不算加权、不逼单。</div>
   </div>
 
   <div class="card" style="margin-top:3mm">
@@ -250,7 +258,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
       <div class="t1">全委 · 董博士团队｜CTA 复盘与追加建议</div>
       <div class="t2">10/27（二）11:00　｜　董博士 ＋ 5–6 位投资经理　｜　在管：招享盈冲 CTA1/2 号 · 朝熠 3/4 号</div>
     </div>
-    <div class="pg">内部 · 不外发<br><b>P1</b> / 3</div>
+    <div class="pg">内部<br><b>P1</b> / 3</div>
   </div>
 
   <div class="toc" style="grid-template-columns:repeat(3,1fr)">
@@ -322,7 +330,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="hd">
     <div><div class="t1">策略与迭代 · 为什么今年突然好</div>
       <div class="t2">14 年实盘｜6 次金牛｜72 亿｜68/51｜朝熠＝CTA＋指增（比例待常青）</div></div>
-    <div class="pg">内部 · 不外发<br><b>P2</b> / 3</div>
+    <div class="pg">内部<br><b>P2</b> / 3</div>
   </div>
 
   <div class="quote"><b>一句话卖点：</b>同样做 CTA，我们 <b>14 年实盘</b>、与同业相关性 0.2–0.4；同样做指增，超额 <b>90% 以上来自残差</b>；四只产品差别在配比，不在大脑。</div>
@@ -380,7 +388,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="hd">
     <div><div class="t1">为什么现在加 · 怎么加 · 必答 8 问</div>
       <div class="t2">董博士拍板，但每位 PM 自己下单；这一页是给他们“敢下单”的理由</div></div>
-    <div class="pg">内部 · 不外发<br><b>P3</b> / 3</div>
+    <div class="pg">内部<br><b>P3</b> / 3</div>
   </div>
 
   <div class="sec"><span class="no">01</span><span class="tt">为什么现在加：四个理由</span><span class="sub">不讲宏大叙事，只讲组合</span></div>
@@ -412,7 +420,14 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
     <div class="qa"><div class="q"><i>Q8</i>CTA＋指增为什么波动大？</div><div class="a"><b>CTA＋指增</b>（底层含中性层；具体比例待常青）；指增端接近满仓 β，放大弹性；CTA 减震、中性平滑，但整体仍是高波品种。</div></div>
   </div>
 
-  <div class="sec"><span class="no">04</span><span class="tt">跟董博士交流，流程怎么走</span><span class="sub">不挑钱的大小，挑钱的期限</span></div>
+  <div class="sec"><span class="no">04</span><span class="tt">谁讲什么：顾 → 李 → 庞 → 顾</span><span class="sub">每个人只讲一件事，讲完就交</span></div>
+  <div class="three">
+    <div class="card"><div class="note"><b>顾小军｜开场/归因</b><br>今年钱怎么来：1 月改比例、4 月改信号、7–8 月行情兑现；两类产品分开说，不算加权。</div></div>
+    <div class="card"><div class="note"><b>李维佳｜策略</b><br>CTA 迭代与回撤边界；朝熠是 CTA＋指增，具体比例待常青；不把它讲成纯 CTA。</div></div>
+    <div class="card"><div class="note"><b>庞小强｜条款</b><br>三档：5000 万 / 1–2 亿 / 3–5 亿；开放日、额度、分批；不逼单。</div></div>
+  </div>
+
+  <div class="sec"><span class="no">05</span><span class="tt">跟董博士交流，流程怎么走</span><span class="sub">不挑钱的大小，挑钱的期限</span></div>
   <div class="idea" style="grid-template-columns:repeat(4,1fr)">
     <div><b>今天｜</b>确认产品与档位，留下对接人。</div>
     <div><b>T+1｜</b>开户/适当性/合同，我们配合材料。</div>
@@ -426,5 +441,34 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="ft"><span>ZHAO-2026-10-27-QUANWEI v2　P3 追加/交流</span></div>
 </div>
 
+<script>
+(function(){
+  function fitPages(){
+    if(window.matchMedia && window.matchMedia('print').matches) return;
+    var h = window.innerHeight - 16;
+    document.querySelectorAll('.page').forEach(function(p){
+      p.style.zoom = '1';
+      var ph = p.getBoundingClientRect().height;
+      if(ph > 0){ p.style.zoom = String(Math.min(1, h/ph)); }
+    });
+  }
+  window.addEventListener('resize', fitPages);
+  window.addEventListener('load', fitPages);
+  setTimeout(fitPages, 400);
+  setTimeout(fitPages, 1400);
+})();
+</script>
+
+<div id="lb"><img alt="放大预览"></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), img=lb.querySelector('img');
+  document.addEventListener('click', function(e){
+    if(e.target.tagName==='IMG' && e.target.closest('.page')){ img.src=e.target.src; lb.classList.add('on'); e.preventDefault(); }
+    else if(e.target===lb){ lb.classList.remove('on'); img.src=''; }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ lb.classList.remove('on'); img.src=''; } });
+})();
+</script>
 </body>
 </html>
