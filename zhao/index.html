@@ -30,9 +30,28 @@
   .ft{margin-top:18px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .copy{background:#fff;border:1px solid var(--line);color:var(--navy);border-radius:8px;padding:8px 12px;font-size:12px;cursor:pointer;font-family:inherit}
   .copy:hover{border-color:var(--blue);color:var(--blue)}
+  #gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#081633,#0B1B4D 55%,#002FA7);display:flex;align-items:center;justify-content:center;padding:16px}
+  #gate .gbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:28px 30px;width:360px;max-width:100%;text-align:center;color:#fff}
+  #gate .gt{font-family:"SimSun",serif;font-size:20px;font-weight:700;letter-spacing:2px}
+  #gate .gs{font-size:12px;opacity:.78;margin:8px 0 18px}
+  #gate input{width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:rgba(0,0,0,.2);color:#fff;font-size:14px;text-align:center;outline:none}
+  #gate button{margin-top:10px;width:100%;padding:10px;border:0;border-radius:8px;background:#C08A2D;color:#0B1B4D;font-weight:700;font-size:14px;cursor:pointer}
+  #gate .ge{color:#F3C9A0;font-size:12px;height:16px;margin-top:6px}
+  @media print{#gate{display:none!important}}
 </style>
 </head>
 <body>
+
+<div id="gate">
+  <div class="gbox">
+    <div class="gt">招行 10/27 · 材料包</div>
+    <div class="gs">内部阅示 · 请输入访问密码</div>
+    <input id="pw" type="password" placeholder="输入密码" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">进入</button>
+    <div class="ge" id="err"></div>
+  </div>
+</div>
+
 <div class="wrap">
   <div class="hd">
     <div>
@@ -76,6 +95,16 @@
   </div>
 </div>
 <script>
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}
+function unlock(){
+  var v=document.getElementById('pw').value.trim();
+  if(gh(v)==='d7ea78a5'||gh(v)==='7238631b'){
+    document.getElementById('gate').style.display='none';
+    try{sessionStorage.setItem('zhao_ok','1');}catch(e){}
+  }else{document.getElementById('err').textContent='密码不对，请重试';}
+}
+try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.display='none';}}catch(e){}
+
 function copyLink(){
   const url = location.href.split('#')[0];
   if(navigator.clipboard && navigator.clipboard.writeText){
