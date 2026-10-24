@@ -227,6 +227,11 @@ body, .page, table, .note, .qa, .card { font-family:"Microsoft YaHei","PingFang 
 #p5 .sec .tt { font-size:10.2pt !important; }
 #p5 table.t td, #p5 .note, #p5 .e { font-size:9.6pt !important; line-height:1.6; }
 #appendix table.t td, #appendix .note { font-size:8.8pt !important; line-height:1.55; }
+
+#p5 table.perf th, #p5 table.perf td { font-size:7.0pt !important; line-height:1.3; padding:1.0mm 1.2mm !important; }
+#p5 table.perf th { font-size:7.0pt !important; }
+#p5 table.perf td.num { text-align:right; font-variant-numeric:tabular-nums; }
+#p5 table.perf td.grp { font-weight:700; color:var(--wine); background:#F7F2E8; }
 </style>
 </head>
 <body>
@@ -353,7 +358,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="sec"><span class="no">04</span><span class="tt">必须提到的关键点</span><span class="sub">产品亮点 / 团队稳定 / 合作态度 / 策略细节</span></div>
   <div class="idea" style="grid-template-columns:repeat(2,1fr)">
     <div><b>产品亮点｜</b>R3 低波；V9 38.03/9.32/-5.30；CTA＋中性今年达到客户长期收益预期。</div>
-    <div><b>团队稳定｜</b>72 人 / 53 投研；清北 13；零核心离职；3 位合伙人共事 20 年；6 次金牛。</div>
+    <div><b>团队稳定｜</b>72 人 / 53 投研 / 14 股票；清北 13；零核心离职；3 位合伙人共事 20 年；6 次金牛。</div>
     <div><b>合作态度｜</b>20 亿额度基本发完；30+ 分行；保险/工资卡/私钻卡；愿分批、控量。</div>
     <div><b>策略细节｜</b>3500+ 选股；5000+ 因子；IF/IC/IM；2–3 月迭代；0.6 硬上限。</div>
   </div>
@@ -640,6 +645,25 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   </div>
 
   
+
+  <div class="sec"><span class="no">05</span><span class="tt">各产品线最新业绩（2026年以来）</span><span class="sub">截至 9/30 与 10/23；招行在售单独标</span></div>
+  <table class="t perf" style="table-layout:fixed">
+    <tr><th style="width:22mm">产品线</th><th>代表产品</th><th style="width:24mm">9/30 今年</th><th style="width:24mm">10/23 今年</th><th style="width:40mm">备注</th></tr>
+    <tr><td class="grp" rowspan="3">CTA</td><td>盈冲量化 CTA10 号</td><td class="num">6.53%</td><td class="num">9.44%</td><td>公司代表产品</td></tr>
+    <tr><td>招享盈冲 CTA1 号</td><td class="num">4.93%</td><td class="num">7.39%</td><td>招行在售</td></tr>
+    <tr><td>招享盈冲 CTA2 号</td><td class="num">5.17%</td><td class="num">7.63%</td><td>招行在售</td></tr>
+
+    <tr><td class="grp" rowspan="3">CTA＋指增</td><td>盈冲量化 CTA25 号</td><td class="num">12.55%</td><td class="num">9.45%</td><td>公司代表产品</td></tr>
+    <tr><td>朝熠锐进 3 号</td><td class="num">8.79%</td><td class="num">9.73%</td><td>招行在售</td></tr>
+    <tr><td>朝熠锐进 4 号</td><td class="num">8.58%</td><td class="num">9.37%</td><td>招行在售</td></tr>
+
+    <tr><td class="grp" rowspan="2">CTA＋中性</td><td>混合均值（4 只等权）</td><td class="num">8.34%</td><td class="num">7.88%</td><td>成益 1/2、稳健、清源 2</td></tr>
+    <tr><td>招享成益量化 1 号</td><td class="num">10.60%</td><td class="num">10.34%</td><td>招行在售</td></tr>
+
+    <tr><td class="grp">纯中性</td><td>剥离法中性（成益 1 号剥离 CTA）</td><td class="num">8.58%*</td><td class="num">—</td><td>累计 38.03%、年化 9.32%、回撤 -5.30%（至 8/31）</td></tr>
+  </table>
+  <div class="note" style="font-size:6.4pt;line-height:1.5">* 纯中性为截至 8/31 的今年以来；9/30 口径待 IMS 更新。其余 10/23 为 10/22 托管净值叠加 10/23 交易日报总收益的预估；9/30 为托管口径。数据来源：IMS。</div>
+
   <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　P5 执行</span></div>
 </div>
 
