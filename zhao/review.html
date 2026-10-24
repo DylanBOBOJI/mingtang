@@ -60,6 +60,11 @@
          border:1px solid var(--line); border-radius:1.4mm; padding:1.9mm 2.5mm; flex:none; }
   .idea div{ font-size:6.2pt; line-height:1.42; color:#3B3731; }
   .idea b{ color:var(--wine2); }
+  .flow{ display:flex; align-items:stretch; gap:1.2mm; margin:2.5mm 0; }
+  .flow .step{ flex:1; background:#fff; border:1px solid var(--line); border-top:1.1mm solid var(--wine3); border-radius:1.2mm; padding:2mm; font-size:6.3pt; line-height:1.45; }
+  .flow .step b{ display:block; color:var(--wine); font-size:7pt; margin-bottom:.8mm; }
+  .flow .step span{ display:block; color:var(--gray); }
+  .flow .arrow{ display:flex; align-items:center; color:var(--gold); font-weight:900; font-size:10pt; }
   .qgroup{ grid-column:1/-1; background:var(--wine); color:#fff; font-size:6.8pt; font-weight:800; padding:1.2mm 2.4mm; border-radius:1mm; margin-top:.8mm; letter-spacing:.5pt; }
   .qgrid{ display:grid; grid-template-columns:1fr 1fr; gap:1.9mm; }
   .qa{ background:#fff; border:1px solid var(--line); border-radius:1.4mm;
@@ -122,27 +127,90 @@
   @media screen and (min-width:1200px){
     body{ padding-left:200px; }
     .side{ display:block; position:fixed; left:0; top:0; bottom:0; width:190px; z-index:60;
-           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:11mm 10px 10mm; overflow:auto; }
-    .side .st{ font-size:14pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
-    .side .ss{ font-size:7.6pt; color:#B9C8DC; line-height:1.55; margin:1.6mm 6px 4mm; }
-    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:3mm 2px 2.2mm; }
-    .side .bt{ font-size:7.6pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 2mm; }
-    .side .li{ display:flex; gap:4px; font-size:9pt; line-height:1.5; color:#EADCCB; margin:1.4mm 4px; }
+           background:linear-gradient(180deg,#081633,#0B1B4D 60%,#102A5C); color:#fff; padding:9mm 8px 8mm; overflow:auto; }
+    .side .st{ font-size:12.5pt; font-weight:800; color:#fff; letter-spacing:.5pt; margin:0 6px; }
+    .side .ss{ font-size:7pt; color:#B9C8DC; line-height:1.45; margin:1.2mm 6px 3mm; }
+    .side .blk{ border-top:1px solid rgba(255,255,255,.14); padding:2mm 2px 1.4mm; }
+    .side .bt{ font-size:7pt; color:#E8C79A; letter-spacing:2px; font-weight:800; margin:0 4px 1.2mm; }
+    .side .li{ display:flex; gap:4px; font-size:8.4pt; line-height:1.4; color:#EADCCB; margin:1mm 4px; }
     .side .li b{ color:#fff; font-weight:800; white-space:nowrap; }
-    .side .big{ display:flex; align-items:baseline; gap:5px; margin:1.2mm 4px; }
-    .side .big b{ font-size:18pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
-    .side .big span{ font-size:7pt; color:#B9C8DC; }
+    .side .big{ display:flex; align-items:baseline; gap:4px; margin:.8mm 4px; }
+    .side .big b{ font-size:15pt; color:#fff; font-weight:900; letter-spacing:-.3pt; }
+    .side .big span{ font-size:6.6pt; color:#B9C8DC; }
     .side .big.red b{ color:#FF8A7A; }
-    .side .kv{ display:flex; justify-content:space-between; gap:5px; font-size:8.4pt; color:#EADCCB; margin:1.5mm 4px; }
+    .side .kv{ display:flex; justify-content:space-between; gap:4px; font-size:7.8pt; color:#EADCCB; margin:1mm 4px; }
     .side .kv b{ color:#fff; font-weight:800; }
-    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.8pt; line-height:1.4;
-             padding:1.7mm 4px; border-left:2px solid transparent; }
+    .side .nav a{ display:block; color:#EADCCB; text-decoration:none; font-size:8.2pt; line-height:1.3;
+             padding:1.2mm 4px; border-left:2px solid transparent; }
     .side .nav a:hover{ background:rgba(255,255,255,.08); border-left-color:#C08A2D; color:#fff; }
   }
   @media screen{ .page{ margin:8mm auto 0; box-shadow:0 2px 12px rgba(0,0,0,.12); } .page:last-of-type{ margin-bottom:10mm; } }
   @media print{ .side,#gate{ display:none !important; } body{ padding-left:0 !important; } }
   @media print{ html,body{ background:#fff; } .bar{ display:none !important; }
     .page{ margin:0; box-shadow:none; break-after:page; } .page:last-of-type{ break-after:auto; } }
+@media print{ .page{ zoom:1 !important; } }
+
+/* readability: pages with spare space */
+#p1 table.t td, #p1 .card .note, #p1 .note { font-size:7.7pt !important; line-height:1.5; }
+#p1 .sub { font-size:6.9pt !important; }
+#p2 .sellcard p { font-size:7.1pt !important; line-height:1.55; }
+#p2 .sellcard .b { font-size:6.7pt !important; }
+#p2 .sellcard .note { font-size:6.2pt !important; }
+#p4 .qa .a { font-size:7.0pt !important; line-height:1.5; }
+#p4 .qa .q { font-size:7.6pt !important; }
+#p4 .qa .e { font-size:6.6pt !important; }
+#p5 table.t td, #p5 .note, #p5 .e { font-size:7.5pt !important; line-height:1.5; }
+#script .flow .step { font-size:6.8pt !important; }
+#script .flow .step b { font-size:7.6pt !important; }
+#script .card .note, #script .note { font-size:7.0pt !important; line-height:1.5; }
+#script .idea div { font-size:6.8pt !important; }
+#appendix table.t td { font-size:7.2pt !important; }
+
+/* readability v2: fill spare space with larger type */
+#p1 table.t td, #p1 .card .note, #p1 .note { font-size:8.0pt !important; line-height:1.52; }
+#p2 .sellcard p { font-size:7.2pt !important; }
+#p4 .qa .a { font-size:7.4pt !important; line-height:1.52; }
+#p4 .qa .q { font-size:8.0pt !important; }
+#p4 .qa .e { font-size:6.9pt !important; }
+#p5 table.t td, #p5 .note, #p5 .e { font-size:8.3pt !important; line-height:1.55; }
+#script .flow .step { font-size:7.4pt !important; }
+#script .flow .step b { font-size:8.2pt !important; }
+#script .card .note, #script .note { font-size:7.6pt !important; line-height:1.52; }
+#script .idea div { font-size:7.4pt !important; }
+
+/* readability v3: larger type on spare pages */
+#p1 table.t td, #p1 .card .note, #p1 .note { font-size:8.4pt !important; line-height:1.55; }
+#p4 .qa .a { font-size:7.8pt !important; line-height:1.55; }
+#p4 .qa .q { font-size:8.4pt !important; }
+#p4 .qa .e { font-size:7.2pt !important; }
+#p5 table.t td, #p5 .note, #p5 .e { font-size:9.2pt !important; line-height:1.58; }
+#script .flow .step { font-size:8.2pt !important; }
+#script .flow .step b { font-size:8.8pt !important; }
+#script .card .note, #script .note { font-size:8.0pt !important; line-height:1.55; }
+#script .idea div { font-size:8.0pt !important; }
+
+/* readability v4 */
+#p1 table.t td, #p1 .card .note, #p1 .note { font-size:8.7pt !important; line-height:1.58; }
+#p1 .sub { font-size:7.2pt !important; }
+#p2 .sellcard p { font-size:7.5pt !important; line-height:1.6; }
+#p2 .sellcard .b { font-size:7.0pt !important; }
+#p2 .sellcard .note { font-size:5.8pt !important; }
+#p4 .qa .a { font-size:8.2pt !important; line-height:1.58; }
+#p4 .qa .q { font-size:8.7pt !important; }
+#p4 .qa .e { font-size:7.6pt !important; }
+#p5 table.t td, #p5 .note, #p5 .e { font-size:9.6pt !important; line-height:1.6; }
+#p5 table.t th { font-size:9.2pt !important; }
+#appendix table.t td, #appendix .note { font-size:7.8pt !important; line-height:1.55; }
+
+.page img{ cursor:zoom-in; }
+#lb{ position:fixed; inset:0; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; z-index:99999; padding:18px; }
+#lb.on{ display:flex; }
+#lb img{ max-width:96vw; max-height:92vh; box-shadow:0 10px 40px rgba(0,0,0,.55); }
+
+/* readability v5: P3 after cuts */
+#p3 .qa .a { font-size:7.2pt !important; line-height:1.5; }
+#p3 .qa .q { font-size:7.8pt !important; }
+#p3 .qa .e { font-size:6.6pt !important; }
 </style>
 </head>
 <body>
@@ -174,14 +242,12 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <div class="blk nav">
     <div class="bt">目录</div>
-    <a href="#cover">材料说明</a>
     <a href="#p1">01 速查</a>
     <a href="#p2">02 策略·卖点</a>
     <a href="#p3">03 风控问答</a>
     <a href="#p4">04 产品·难题</a>
     <a href="#p5">05 执行</a>
     <a href="#appendix">附录 A·7 月回撤</a>
-    <a href="#script">附录 B·逐字稿</a>
   </div>
 
   <div class="blk">
@@ -211,24 +277,16 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <button onclick="window.print()">打印 / 存为 PDF</button>
 </div>
 
-<!-- ================= 封面 / 材料说明 ================= -->
-<div class="page" id="cover">
+<!-- ================= P1 总览（原封面已合并） ================= -->
+<!-- ================= P1 速查 ================= -->
+<div class="page" id="p1">
   <div class="hd">
-    <div><div class="t1">招行上会材料 · 说明</div>
-      <div class="t2">致顾小军、李维佳、庞小强｜10/27 09:00 全行代销评审</div></div>
-    <div class="pg">内部阅示<br><b>封面</b></div>
+    <div><div class="t1">招行代销上会 · 主手册</div>
+      <div class="t2">致顾小军、李维佳、庞小强｜10/27 09:00 全行代销评审｜40′ 陈述＋60′ 问答＋10′ 合议</div></div>
+    <div class="pg">约 2′<br><b>P1</b> / 5</div>
   </div>
 
-  <div class="quote">
-    <b>各位领导：</b>10/27 09:00 招行全行代销评审，材料已按“总—分—执行”备好。这份是代销上会主手册；另配逐字稿（附录 B）。请重点看口径、红线、分工；策略细节由顾小军、李维佳现场答。
-  </div>
-
-  <table class="t">
-    <tr><th style="width:24mm">背景</th><td><b>09:00 全行代销评审</b>（风险合规 / 消保 / 产品引入，40′ 陈述＋60′ 问答，可投屏）。</td></tr>
-    <tr><th>本次物料</th><td>① 上会手册 v3（<b>5 页正文＋附录 A/B</b>）；② <b>PPT</b>（关键页见图；完整版明天更新后发）；③ 上台逐字稿（<b>附录 B·单独 PDF</b>）。</td></tr>
-  </table>
-
-  <div class="sec"><span class="no">01</span><span class="tt">项目来龙去脉（会前 3 分钟）</span><span class="sub">2021 → 2024 → 2026/7 → 10/27</span></div>
+  <div class="sec"><span class="no">00</span><span class="tt">项目来龙去脉（会前 3 分钟）</span><span class="sub">2021 → 2024 → 2026/7 → 10/27</span></div>
   <table class="t">
     <tr><th style="width:20mm">时间</th><th style="width:34mm">节点</th><th>一句话</th></tr>
     <tr><td class="k">2021</td><td class="k">合作起步</td><td>华润信托·涵德多策略对冲 1–34 号；20% CTA＋80% 中性；风险定级 <b>R5</b>。</td></tr>
@@ -236,215 +294,141 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
     <tr><td class="k">2026/7</td><td class="k">申报 R3 纯中性</td><td>混合 R5 受众受限；纯中性 <b>R3</b> 受众更广，匹配招行 <b>1200–1400 亿</b>中性存量。</td></tr>
     <tr><td class="k">8/21 → 10/27</td><td class="k">尽调 → 评审</td><td>总行现场尽调结论“建议新增合作、提交评审会”；今天拿档级与额度。</td></tr>
   </table>
-  <div class="note">招行偏好：<b>治理稳定、风控为先、集中深耕</b>；目标占管理人总规模 40–50%。本次<b>风控展示重于业绩辩护</b>。</div>
-
-  <div class="sec"><span class="no">02</span><span class="tt">PPT 关键页（内嵌）</span><span class="sub">P15 业绩 / P18 风控补强 / P14 原理</span></div>
-  <div class="three">
-    <div style="color:inherit"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p15.png" alt="P15 中性业绩" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:6pt;margin-top:.8mm"><b>P15 中性业绩</b><br>38.03 / 9.32 / -5.30</div></div>
-    <div style="color:inherit"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p18.png" alt="P18 风控补强" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:6pt;margin-top:.8mm"><b>P18 风控补强</b><br>0.6 硬上限 / size ±0.2</div></div>
-    <div style="color:inherit"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p14.png" alt="P14 中性原理" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:6pt;margin-top:.8mm"><b>P14 中性原理</b><br>只承担筛选过的 Alpha 风险</div></div>
-  </div>
-
-  <div class="two" style="margin-top:1mm">
-    <div class="card">
-      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p5.png" alt="P5 六度金牛" style="width:100%;border:1px solid var(--line);border-radius:1mm">
-      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P5 六度金牛：</b>2019–2025 六次金牛奖。</div>
-    </div>
-    <div class="card">
-      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p22.png" alt="P22 四条宽基" style="width:100%;border:1px solid var(--line);border-radius:1mm">
-      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P22 股票：</b>500 / 1000 / 2000 各有比较优势。</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:3mm">
-    <div class="note"><b>请阅示</b><br>顾小军　李维佳　庞小强</div>
-  </div>
-
-  
-  <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　封面/材料说明</span></div>
-</div>
-
-<!-- ================= P1 速查 ================= -->
-<div class="page" id="p1">
-  <div class="hd">
-    <div><div class="t1">招行代销上会 · 主手册</div>
-      <div class="t2">09:00 评审｜风险合规 / 消保 / 产品引入｜40′ 陈述＋60′ 问答＋10′ 合议｜可投屏</div></div>
-    <div class="pg">内部 · 不外发<br><b>P1</b> / 5</div>
-  </div>
-
-  <div class="toc" style="grid-template-columns:repeat(6,1fr)">
-    <div class="lbl"><b>目录 / CONTENTS</b><span>共 5 页＋附录 A/B · 总 → 分 → 执行</span></div>
-    <a href="#p1"><b>01 速查 · P1</b><span>三件事 / 四问 / 六数</span></a>
-    <a href="#p2"><b>02 策略·卖点 · P2</b><span>中性 / CTA / CTA＋中性</span></a>
-    <a href="#p3"><b>03 风控问答 · P3</b><span>14 问＋消保 2 问</span></a>
-    <a href="#p4"><b>04 产品·难题 · P4</b><span>7 问＋策略产品 10 问</span></a>
-    <a href="#p5"><b>05 执行 · P5</b><span>判断 / 分工 / 应对</span></a>
-    <a href="#appendix"><b>附录 A/B</b><span>7 月回撤 / 逐字稿</span></a>
-  </div>
-
   <div class="quote">
     <b>一句话定调：</b>今天是确认会：确认<b>业绩可对账、风险有边界、合作有方案</b>。三个部门问的是同一件事——把钱交给涵德，能不能解释、能不能管住、能不能落地。今天只讲这三样。
   </div>
 
-  <div class="sec"><span class="no">01</span><span class="tt">今天要拿到的三件事</span><span class="sub">过会 &gt; 额度 &gt; 费率</span></div>
+  <table class="t" style="margin-top:1mm">
+    <tr><th style="width:24mm">本次物料</th><td>① 上会手册 v3（<b>5 页正文＋附录 A</b>）；② <b>PPT</b>（关键页已嵌在 P2 对应板块，完整版明天更新后发）。</td></tr>
+  </table>
+
+  <div class="sec"><span class="no">01</span><span class="tt">40分钟流程安排</span><span class="sub">谁讲、讲多久、讲完交给谁</span></div>
+  <div class="flow" style="margin:1mm 0">
+    <div class="step"><b>0–3′ 庞小强</b><span>合作底盘<br>20 亿/30+ 分行<br>交给顾小军</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>3–18′ 顾小军</b><span>业绩先给结论<br>38.03/对账<br>7 月：认→转→数</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>18–26′ 李维佳</b><span>策略与风控<br>3500+/混合对冲<br>Pure Alpha &gt;90%</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>26–33′ 顾小军</b><span>能力与规模<br>68/51<br>72 亿/容量 150 亿</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>33–38′ 庞小强</b><span>要素/合作<br>费率/10–20 亿<br>分批、控量</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>38–40′ 顾小军</b><span>收束<br>可对账/有边界<br>有方案</span></div>
+  </div>
+
+
+  <div class="sec"><span class="no">02</span><span class="tt">今日目标</span><span class="sub">过会 &gt; 额度 &gt; 费率</span></div>
   <div class="three">
     <div class="card"><div class="note"><b>① 过会：</b>通过或有条件通过，明确补件清单与时限；最低“有条件通过”。</div></div>
     <div class="card"><div class="note"><b>② 档级：</b>落到具体档位，不接受“先不定”；档级与额度一起谈。</div></div>
     <div class="card"><div class="note"><b>③ 额度：</b>理想 15–20 亿；可接受 10 亿；底线“先定额度、分批发行”。</div></div>
   </div>
 
-  <div class="sec"><span class="no">02</span><span class="tt">四项关注 · 一句话答法</span><span class="sub">先认 → 再转 → 后给数</span></div>
+  <div class="sec"><span class="no">03</span><span class="tt">四项关注</span><span class="sub">先认 → 再转 → 后给数</span></div>
   <table class="t">
-    <tr><th style="width:32mm">关注</th><th>一句话（念得出来）</th><th style="width:50mm">再补一句</th><th style="width:26mm">千万别说</th></tr>
-    <tr><td class="k">① 实盘短、归因细</td><td>中性这条线 2023 年起有连续实盘——拿贵行在管的<b>招享成益 1 号</b>，把 CTA 端拨掉，剩中性端：累计 <b>38.03%</b>、年化 <b>9.32%</b>、回撤 <b>5.30</b> 个点，周频托管复核。</td><td>“拨出的中性加回 CTA，和托管净值对得上：<b>35.63% 对 34.67%</b>。”</td><td>“时间确实短”</td></tr>
-    <tr><td class="k">② 股权分散、治理</td><td>实控人秦志宇 <b>29.37%</b>，三位创始人合计约 <b>80%</b>，重大事项投委会投票；13 年零纠纷、零诉讼。</td><td>“财务投资人在退，给合理回报、不扯皮；决策权在三位创始人。”</td><td>具体股东名、退出价格、时间表</td></tr>
-    <tr><td class="k">③ 7 月回撤、修复弱</td><td>7 月是<b>主动压降单票集中度、下调几个风格/流动性敞口</b>——用反弹的弹性换不失控；8 月第一周反弹弱，是这些动作的代价。</td><td>“<b>size 一直 ±0.2，不是压到 0.2</b>；8 月底参数调回；把此前软控的流动性/残差波动率改成 <b>0.6 硬上限</b>。”</td><td>别说“压到 0.2”——size 一直是 0.2</td></tr>
-    <tr><td class="k">④ 规模小、排名后</td><td>规模不大，但投研按百亿配——<b>68 人里 51 个投研 IT</b>；招行<b>20 亿额度基本发完</b>、<b>30+ 家分行</b>。</td><td>“容量 150 亿，80% 预警、100% 暂停募集，写进制度。”</td><td>与同业比规模、点评别家</td></tr>
+    <tr><th style="width:32mm">关注</th><th>一句话（念得出来）</th><th style="width:50mm">再补一句</th></tr>
+    <tr><td class="k">① 实盘短、归因细</td><td>中性这条线 2023 年起有连续实盘——拿贵行在管的<b>招享成益 1 号</b>，把 CTA 端拨掉，剩中性端：累计 <b>38.03%</b>、年化 <b>9.32%</b>、回撤 <b>5.30</b> 个点，周频托管复核。</td><td>“拨出的中性加回 CTA，和托管净值对得上：<b>35.63% 对 34.67%</b>。”</td></tr>
+    <tr><td class="k">② 股权分散、治理</td><td>实控人秦志宇 <b>29.37%</b>，三位创始人合计约 <b>80%</b>，重大事项投委会投票；13 年零纠纷、零诉讼。</td><td>“财务投资人在退，给合理回报、不扯皮；决策权在三位创始人。”</td></tr>
+    <tr><td class="k">③ 7 月回撤、修复弱</td><td>7 月是<b>主动压降单票集中度、下调几个风格/流动性敞口</b>——用反弹的弹性换不失控；8 月第一周反弹弱，是这些动作的代价。</td><td>“<b>size 一直 ±0.2，不是压到 0.2</b>；8 月底参数调回；把此前软控的流动性/残差波动率改成 <b>0.6 硬上限</b>。”</td></tr>
+    <tr><td class="k">④ 规模小、排名后</td><td>规模不大，但投研按百亿配——<b>68 人里 51 个投研 IT</b>；招行<b>20 亿额度基本发完</b>、<b>30+ 家分行</b>。</td><td>“容量 150 亿，80% 预警、100% 暂停募集，写进制度。”</td></tr>
   </table>
 
-  <div class="kpi" style="grid-template-columns:repeat(6,1fr)">
-    <div><div class="v" style="color:#C0392B">38.03%</div><div class="l">中性累计<br>2023.1–2026.8</div></div>
-    <div><div class="v">9.32%</div><div class="l">年化收益<br>同区间</div></div>
-    <div><div class="v" style="color:#C0392B">-5.30%</div><div class="l">最大回撤<br>周频</div></div>
-    <div><div class="v">72 亿</div><div class="l">规模（剔除嵌套）<br>2026-08-31</div></div>
-    <div><div class="v">68 / 51</div><div class="l">总人数 / 投研 IT<br>2026-08-31</div></div>
-    <div><div class="v">150 亿</div><div class="l">股票策略容量<br>测算/现行</div></div>
-  </div>
-
-  <div class="sec"><span class="no">03</span><span class="tt">40 分钟怎么讲：每段只留一个重点</span><span class="sub">只讲三页（PPT）：P15 中性 · P4 团队 · P8 长线</span></div>
-  <table class="t">
-    <tr><th style="width:15mm">时间</th><th style="width:30mm">段落</th><th>必须说到</th><th style="width:20mm">谁</th></tr>
-    <tr><td class="k">0–3′</td><td class="k">庞小强 · 开场</td><td>五年合作；20 亿额度基本发完、30+ 分行；今年 CTA＋中性达到客户长期收益预期；把时间交给顾小军。</td><td>庞小强</td></tr>
-    <tr><td class="k">3–18′</td><td class="k">顾小军 · 接场＋业绩</td><td>四个问题；先给结论：拿贵行在管的成益 1 号拆出来；38.03/9.32/5.21/1.79/-5.30；对账 35.63 vs 34.67；7 月回撤与修复（完整版见附录 A）。</td><td>顾小军</td></tr>
-    <tr><td class="k">18–26′</td><td class="k">李维佳 · 策略/风控</td><td>全市场选股 3500+、IF/IC/IM 混合对冲、Pure Alpha &gt;90%；敞口四个数；人工干预的触发条件；2026 两次迭代。</td><td>李维佳</td></tr>
-    <tr><td class="k">26–33′</td><td class="k">顾小军 · 能力/规模</td><td>68 人/51 投研；72 亿/129 支（8/31）；容量 150 亿、80% 预警/100% 暂停；30+ 家分行。</td><td>顾小军</td></tr>
-    <tr><td class="k">33–38′</td><td class="k">庞小强 · 要素/合作</td><td>R3 纯中性要素；费率/锁定期/跟投；申请 10–20 亿新额度；20 亿旧额度基本发完；分批、控量、排期。</td><td>庞小强</td></tr>
-    <tr><td class="k">38–40′</td><td class="k">顾小军 · 收束</td><td>三句话：业绩可对账、风险有边界、合作有方案。请评审给出档级与额度。</td><td>顾小军</td></tr>
-  </table>
-
-  <div class="sec"><span class="no">04</span><span class="tt">四张底牌（每段必须说到）</span><span class="sub">产品亮点 / 团队稳定 / 合作态度 / 策略细节</span></div>
-  <div class="idea" style="grid-template-columns:repeat(4,1fr)">
+  <div class="sec"><span class="no">04</span><span class="tt">必须提到的关键点</span><span class="sub">产品亮点 / 团队稳定 / 合作态度 / 策略细节</span></div>
+  <div class="idea" style="grid-template-columns:repeat(2,1fr)">
     <div><b>产品亮点｜</b>R3 低波；V9 38.03/9.32/-5.30；CTA＋中性今年达到客户长期收益预期。</div>
     <div><b>团队稳定｜</b>68/51；清北 13；零核心离职；3 位合伙人共事 20 年；6 次金牛。</div>
     <div><b>合作态度｜</b>20 亿额度基本发完；30+ 分行；保险/工资卡/私钻卡；愿分批、控量。</div>
     <div><b>策略细节｜</b>3500+ 选股；5000+ 因子；IF/IC/IM；2–3 月迭代；0.6 硬上限。</div>
   </div>
 
-  <div class="card"><div class="note"><b>谁答什么：</b>战略/额度 <b>庞小强</b>｜治理 <b>顾小军</b>｜策略 <b>顾小军·李维佳</b>｜数字 <b>常青</b>。同一问题只一个答案。</div></div>
+  <div class="card"><div class="note"><b>谁答什么：</b>战略/额度 <b>庞小强</b>｜治理 <b>顾小军</b>｜策略 <b>顾小军·李维佳</b>｜数字 <b>常青</b>。同一问题只一个答案。40 分钟流程见本页。</div></div>
 
-  
-  <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　P1 速查</span></div>
+  <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　P1 总览</span></div>
 </div>
 
-<!-- ================= P2 背景/会议（合并入 P1/封面） ================= -->
+<!-- ================= P2 背景/会议（已合并入 P1） ================= -->
 
 <!-- ================= P2 策略卖点 ================= -->
 <div class="page" id="p2">
   <div class="hd">
     <div><div class="t1">涵德是谁 · 我们卖什么</div>
-      <div class="t2">公司 / 团队 / 股票策略 / 中性 / CTA / 指增 / 风控 / 容量——要能一口气讲完</div></div>
-    <div class="pg">内部 · 不外发<br><b>P2</b> / 5</div>
+      <div class="t2">公司 / 团队 / 股票 / 中性 / CTA / 指增 / 复合——重点板块配 PPT 原页，讲到哪、图在哪</div></div>
+    <div class="pg">约 3′<br><b>P2</b> / 5</div>
   </div>
 
-  <div class="kpi" style="grid-template-columns:repeat(6,1fr)">
-    <div><div class="v">2013</div><div class="l">成立<br>13 年</div></div>
-    <div><div class="v">6 次</div><div class="l">金牛奖<br>2019–2025</div></div>
-    <div><div class="v">72 亿</div><div class="l">剔除嵌套<br>129 支</div></div>
-    <div><div class="v">68 / 51</div><div class="l">总人数<br>/ 投研 IT</div></div>
-    <div><div class="v">清北 13</div><div class="l">硕士 98%<br>理工背景</div></div>
-    <div><div class="v">零核心</div><div class="l">近三年<br>零核心离职</div></div>
-  </div>
-
-  <div class="quote">
-    <b>一句话卖点：</b>同样叫中性，我们给的是<b>低波 R3 版</b>；<b>中性不负责判断牛熊，它让组合不必依赖一次正确的判断。</b>同样做量化，我们的超额 <b>90% 以上来自残差</b>；同样做 CTA，我们 <b>14 年实盘</b>、与同业相关性 0.2–0.4。不是收益最高，是<b>可解释、可复制的工艺派</b>。
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2mm;margin-bottom:1mm">
+    <div class="card"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p2.png" alt="14年" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;margin-top:.5mm;text-align:center"><b>2012 CTA 起点｜2013 公司成立</b></div></div>
+    <div class="card"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p3.png" alt="核心团队" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;margin-top:.5mm;text-align:center"><b>核心团队｜完整版</b></div></div>
+    <div class="card"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p4.png" alt="六度金牛" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;margin-top:.5mm;text-align:center"><b>6 次金牛｜2019–2025</b></div></div>
+    <div class="card"><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p5.png" alt="管理规模与团队" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;margin-top:.5mm;text-align:center"><b>规模 / 团队｜口径见 P1</b></div></div>
   </div>
 
   <div class="sell">
-    <div class="sellcard">
+    <div class="sellcard" style="grid-column:1/-1">
       <h4><i>01</i>股票策略：六步流水线，Pure Alpha</h4>
-      <p><b>是什么：</b>全市场选股（3500+），沪深 300/500/1000 混合配置；多头端选股，空头端用 IF/IC/IM 混合对冲。</p>
-      <p><b>怎么赚：</b>收益 ≈ 选股超额 − 对冲成本；超额来自 5000+ 因子（每天择优约 3000 个上线）在 5000 只 A 股里做横截面选股。</p>
-      <ul>
-        <li>六步流水线：数据 → 因子 → 模型 → 组合 → 执行 → 归因；14 人股票团队，2–3 个月迭代一版。</li>
-        <li>硬约束：市值敞口 ±0.2σ、行业偏离 ≤3%、单票 ≤1%、成分股占比 ≥50%；年化换手 60–70 倍。</li>
-        <li>超额纯度：残差贡献 <b>&gt;90%</b>，风格依赖低；2025 年起切到更高换手框架。</li>
-        <li>出身：李维佳（原世坤全球研究总监）2021 年加入，把海外流水线完整搬进来。</li>
-      </ul>
-      <div class="b">边界：超额会衰减、会回撤；不承诺单月正收益。</div>
+      <p><b>是什么：</b>全市场选股 3500+，500/1000/2000 宽基配置；多头选股、空头对冲，只留选股超额。</p>
+      <p><b>怎么赚：</b>指数 β ＋ 选股 α；5000+ 因子；六步流水线；2–3 个月迭代一版。</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2mm;margin-top:1mm">
+        <div><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk_p9.png" alt="股票团队架构" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.2pt;text-align:center;margin-top:.4mm">股票团队架构｜Alpha 拆解</div></div>
+        <div><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p10.png" alt="5000+ Alpha" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;text-align:center;margin-top:.4mm">5000+ Alpha / 14 人股票团队</div></div>
+        <div><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p11.png" alt="全流程风控" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;text-align:center;margin-top:.4mm">全流程风控：事前 / 事中 / 事后</div></div>
+        <div><img src="https://dylanboboji.github.io/mingtang/zhao/ppt/bk2_p12.png" alt="硬约束" style="width:100%;border:1px solid var(--line);border-radius:1mm"><div class="note" style="font-size:5.4pt;text-align:center;margin-top:.4mm">硬约束：size ±0.2 / 单票 1% / 行业 3%</div></div>
+      </div>
+      <div class="b">边界：β 还在；超额会衰减，不承诺单月正收益。</div>
     </div>
 
     <div class="sellcard">
       <h4><i>02</i>中性：两条线，别混</h4>
-      <p><b>是什么：</b>多头买一篮子股票，空头用股指期货对冲掉市场涨跌，只留下选股超额；收益 ≈ 选股超额 − 对冲成本（基差）。</p>
-      <p><b>怎么赚：</b>不要求指数涨，只要求多头组合跑赢对冲的指数；IF/IC/IM 混合对冲，按基差动态调比，设基差应急机制。</p>
-      <ul>
-        <li><b>本次报的 R3 低波版：</b>V9 样本（成益 1 号剥离中性）年化波动 <b>5.21%</b>、最大回撤 <b>-5.30%</b>、年化 9.32%。</li>
-        <li><b>另一条 R4 中频版：</b>波动 8–9%、回撤 -7.46%，交易型 Alpha 更弹；两条线不是一回事。</li>
-        <li>2024/2 基差年化超 30% 时，人工把中性清过一次，回到 5–6% 再恢复——这是“先下车”的风控案例。</li>
-      </ul>
-      <div class="b">中性不是不承担风险，是只承担筛选过的 Alpha 风险；它是降低不确定性的工具，不是提高弹性的工具。</div>
+      <p><b>是什么：</b>多头股票＋空头股指期货，只留选股超额；IF/IC/IM 混合对冲。</p>
+      <p><b>怎么赚：</b>收益 ≈ 选股超额 − 对冲成本；两条线：<b>R3 低波</b> vs <b>R4 中频</b>。</p>
+      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p15.png" alt="中性策略收益风险" style="width:100%;display:block;margin:1mm auto 0;border:1px solid var(--line);border-radius:1mm">
+      <div class="note" style="font-size:5.8pt;text-align:center;margin-top:.4mm">中性策略：38.03 / 9.32 / 5.21 / 1.79 / -5.30；对账 34.67 vs 35.63</div>
+      <div class="note" style="font-size:6.0pt;margin-top:.6mm">适合：已有股票多头 / 对方向没把握 / 风险偏好下降。</div>
+      <div class="b">边界：中性不包赚；2024/2 基差 &gt;30% 时曾人工清仓。</div>
     </div>
 
     <div class="sellcard">
       <h4><i>03</i>CTA：14 年实盘，双向交易</h4>
-      <p><b>是什么：</b>商品、股指、国债期货上做双向交易；涨有趋势做多、跌有趋势做空，不依赖股票涨跌。</p>
-      <p><b>怎么赚：</b>趋势（做多波动性，引擎）+ 反转（做空波动性，平滑器）+ 基本面/套利（期限结构、价差，压舱石）；当前约 <b>5:4:1</b>。</p>
-      <ul>
-        <li>40+ 个流动性最好的商品与股指期货；中短周期为主，迭代后覆盖 3–15 天。</li>
-        <li>保证金占用 10%–25%（纯 CTA），合同上限 30%；三层约束：整体 ≤30%、板块 ≤5%、单品种 ≤10%。</li>
-        <li>与同业 CTA 相关性 <b>0.2–0.4</b>，与股债低相关；CTA 容量约 50 亿，当前约 15 亿（8/31）。</li>
-      </ul>
-      <div class="b">边界：商品快速切换期会磨损；纯 CTA 周频回撤可达两位数。</div>
+      <p><b>是什么：</b>商品、股指、国债期货上做双向交易；40+ 流动性好的品种。</p>
+      <p><b>怎么赚：</b>趋势 ＋ 反转 ＋ 基差；保证金 10–25%（纯 CTA），上限 30%。</p>
+      <div class="b">边界：商品快速切换会磨损；周频回撤可达两位数。</div>
+      <div class="note" style="font-size:6.0pt;margin-top:1mm">现场口径：不念统计指标；只讲 14 年实盘、双向交易、与股债低相关。</div>
     </div>
 
     <div class="sellcard">
       <h4><i>04</i>指增：500 / 1000 / 2000，各有比较优势</h4>
-      <p><b>是什么：</b>在 500/1000/2000 宽基上做量化选股，保持接近满仓的指数敞口；本次不报指增，只说明股票端能力。</p>
-      <p><b>怎么赚：</b>收益 ≈ 指数 β + 选股 α；同一套 5000+ 因子与流水线，按指数风格分层。</p>
-      <ul>
-        <li>500/1000/2000 均有实盘超额；500/1000 更稳，2000 池子小、覆盖低，α 更厚。</li>
-        <li>我们更愿意讲 500/1000 的稳定性：超额来源分散、行业/风格约束严；2000 是补充，不主动推。</li>
-      </ul>
-      <div class="b">边界：β 还在，指数跌它同跌；超额只缓冲、不对冲；指增不在本次申报范围。</div>
+      <p><b>是什么：</b>500/1000/2000 宽基上做量化选股；指数 β ＋ 选股 α。</p>
+      <p><b>怎么赚：</b>同一套 5000+ 因子与流水线；<b>500/1000 更稳</b>，2000 是补充。</p>
+      <div class="b">边界：本次不报指增，只说明股票端能力；β 还在。</div>
+    </div>
+
+    <div class="sellcard">
+      <h4><i>05</i>复合策略：CTA ＋ 中性（招行现有产品线）</h4>
+      <p><b>是什么：</b>约 20% CTA 保证金＋80% 中性；CTA 抓商品趋势、中性赚选股超额，两块低相关。</p>
+      <p><b>怎么赚：</b>CTA 保证金 10–15%（上限 20%）；比纯 CTA 稳、比纯中性多一层弹性。</p>
+      <div class="b">边界：R5；不在本次申报范围；今年 CTA＋中性达到客户长期收益预期。</div>
     </div>
   </div>
 
-  <div class="sellcard" style="margin-top:.2mm">
-    <h4><i>05</i>复合策略：CTA＋中性（招行现有产品线）</h4>
-    <p><b>是什么：</b>约 <b>20% CTA 保证金＋80% 中性</b>；CTA 抓商品趋势、中性赚选股超额，两块低相关，互为备份。</p>
-    <p><b>特点：</b>CTA 保证金 10%–15%（上限 20%）；比纯 CTA 稳、比纯中性多一层弹性；代表产品成益 1 号；适合私行/稳健底仓。</p>
-    <div class="b">今年 CTA+中性达到客户长期收益预期；这是招行最熟的一条线，也是 R3 纯中性的“姊妹线”。</div>
-  </div>
+  <div class="note"><b>本次只报 R3 纯中性</b>；其他线不在申报范围。有图的板块，图就是 PPT 对应页；缩略图可点开放大，现场讲到哪，翻到哪一页。</div>
 
-  <div class="note"><b>本次只报 R3 纯中性</b>；其他线不在申报范围。下面两页是 PPT 原页。</div>
-  <div class="two" style="margin-top:1mm">
-    <div class="card">
-      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p15.png" alt="P15 中性业绩" style="width:100%;border:1px solid var(--line);border-radius:1mm">
-      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P15 中性业绩：</b>38.03 / 9.32 / 5.21 / 1.79 / -5.30；对账 35.63 vs 34.67。</div>
-    </div>
-    <div class="card">
-      <img src="https://dylanboboji.github.io/mingtang/zhao/ppt/p18.png" alt="P18 风控补强" style="width:100%;border:1px solid var(--line);border-radius:1mm">
-      <div class="note" style="font-size:6.2pt;margin-top:.8mm"><b>P18 风控补强：</b>流动性/残差波动率设上限；size 一直 ±0.2；集中度临时压降。</div>
-    </div>
-  </div>
-
-  
   <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　P2 策略/卖点</span></div>
 </div>
 
 <!-- ================= P3 风控问答 ================= -->
 <div class="page" id="p3">
   <div class="hd">
-    <div><div class="t1">风险管理合规部 · 14 问　｜　消费者保护部 · 2 问</div>
+    <div><div class="t1">风险管理合规部 · 11 问　｜　消费者保护部 · 2 问</div>
       <div class="t2">风控决定“能不能过”；消保只留两问：话术与回撤沟通</div></div>
-    <div class="pg">内部 · 不外发<br><b>P3</b> / 5</div>
+    <div class="pg">约 5′<br><b>P3</b> / 5</div>
   </div>
 
-  <div class="sec"><span class="no">A</span><span class="tt">风险管理合规部</span><span class="sub">先认 → 再转 → 后给数</span></div>
+  <div class="sec"><span class="no">一</span><span class="tt">风险管理合规部</span><span class="sub">先认 → 再转 → 后给数</span></div>
   <div class="qgrid">
-    <div class="qgroup" style="order:1">A · 业绩与归因</div>
-    <div class="qgroup" style="order:10">B · 公司治理与经营</div>
-    <div class="qgroup" style="order:20">C · 合规、产品与风控</div>
+    <div class="qgroup" style="order:1">（一）业绩与归因</div>
+    <div class="qgroup" style="order:10">（二）公司治理与经营</div>
+    <div class="qgroup" style="order:20">（三）合规、产品与风控</div>
     <div class="qa" style="order:2"><div class="q"><i>Q1</i>纯中性实盘这么短，凭什么过准入？</div>
       <div class="a">中性这条线 2023 年起有连续实盘。不是拿一只新产品来报，是拿<b>贵行在管的招享成益 1 号</b>，把 CTA 端拨掉，剩中性端。</div>
       <div class="e"><b>证据：</b>累计 38.03%、年化 9.32%、回撤 -5.30%（周频托管复核）。<b>主答：</b>顾小军</div></div>
@@ -461,48 +445,39 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
       <div class="a">7 月中旬回撤到阈值、且收益分解显示“风格为主、Alpha 极少”，<b>压降单票集中度、下调几个风格/流动性敞口</b>；7 月最后两周回撤受控。<b>size 一直 ±0.2，不是“压到 0.2”</b>。</div>
       <div class="e"><b>证据：</b>8 月 +2.33% 转正；8 月底参数已调回；把此前软控的流动性/残差波动率改为 <b>0.6 硬上限</b>；集中度是临时压降，不是硬上限。中性比指增差：切换稍晚＋对冲端拖累。<b>完整归因见附录 A。</b><b>主答：</b>顾小军/李维佳</div></div>
 
-    <div class="qa" style="order:21"><div class="q"><i>Q5</i>会人工干预？下次是不是也拍脑袋？</div>
+    <div class="qa" style="order:21"><div class="q"><i>Q8</i>会人工干预？下次是不是也拍脑袋？</div>
       <div class="a">只判断“收不收”，不判断“买什么”。触发条件写死：<b>2–3% 不干预、4% 初步控制、5% 强制控制</b>；单日超额 2–3 个点、市场异常同样触发；同策略全产品阈值一致、有记录、有复盘。</div>
       <div class="e"><b>边界：</b>绝不说“完全自动、没有人”。<b>主答：</b>顾小军</div></div>
 
-    <div class="qa" style="order:11"><div class="q"><i>Q6</i>股权这么分散，三个创始人万一不合？</div>
+    <div class="qa" style="order:11"><div class="q"><i>Q5</i>股权这么分散，三个创始人万一不合？</div>
       <div class="a">实控人明确：秦志宇 <b>29.37%</b>，三位创始人合计约 <b>80%</b>；重大事项投委会投票；成立 13 年零股权纠纷、零诉讼。</div>
       <div class="e"><b>补充：</b>财务投资人已在退，不参与运营；2025 年回购根网科技。<b>主答：</b>顾小军</div></div>
 
-    <div class="qa" style="order:22"><div class="q"><i>Q7</i>有没有关联交易、利益冲突、兼营？</div>
+    <div class="qa" style="order:13"><div class="q"><i>Q7</i>有没有关联交易、利益冲突、兼营？</div>
       <div class="a">无关联私募、无兼营；所有客户资产在托管账户；公平交易制度、员工跟投制度齐全；近三年无行政处罚、无自律处分。</div>
       <div class="e"><b>证据：</b>V9 表 5 合规底线 7 组全部“是”。<b>主答：</b>常青</div></div>
 
-    <div class="qa" style="order:14"><div class="q"><i>Q8</i>规模这么小，容量到底多少？</div>
-      <div class="a">股票策略容量 <b>150 亿</b>；当前 50 亿+ 规模下因子有效性无衰减；到 <b>80% 预警、100% 暂停募集</b>，写进制度。</div>
-      <div class="e"><b>证据：</b>72 亿（剔除嵌套，8/31）、129 支产品（8/31）；一季度 5–10 亿节奏。<b>主答：</b>顾小军</div></div>
 
-    <div class="qa" style="order:23"><div class="q"><i>Q9</i>产品有没有杠杆？衍生品怎么管？</div>
-      <div class="a">中性不带杠杆；CTA 端保证金交易，但组合层面有保证金与仓位约束。2024/9 曾出现仓位高于 100%，是<b>赎回导致减仓延后</b>，不是主动加杠杆。</div>
-      <div class="e"><b>证据：</b>V9 仓位说明；期货账户与股票账户统筹。<b>主答：</b>李维佳</div></div>
 
-    <div class="qa" style="order:24"><div class="q"><i>Q10</i>有没有历史处罚、诉讼？</div>
+    <div class="qa" style="order:24"><div class="q"><i>Q9</i>有没有历史处罚、诉讼？</div>
       <div class="a">近三年<b>无行政处罚、无自律处分、无未决诉讼</b>；无重大负面记录；合规底线 7 组全部达标。</div>
       <div class="e"><b>证据：</b>V9 表 5；可现场给截图。<b>主答：</b>常青</div></div>
 
-    <div class="qa" style="order:12"><div class="q"><i>Q11</i>核心人员会不会走？</div>
+    <div class="qa" style="order:12"><div class="q"><i>Q6</i>核心人员会不会走？</div>
       <div class="a">68 人、投研 IT <b>51 人</b>；约 40 人司龄 5 年以上；<b>近三年零核心离职</b>；三位合伙人共事 20 年。</div>
       <div class="e"><b>证据：</b>清北 13 人、硕士以上 98%。<b>主答：</b>顾小军</div></div>
 
-    <div class="qa" style="order:13"><div class="q"><i>Q12</i>策略会不会失效？因子拥挤怎么办？</div>
-      <div class="a">全市场选股 <b>3500+</b>，IF/IC/IM <b>混合对冲</b>；5000+ 因子、2–3 个月迭代；2025 年切到更高换手（60–70 倍）；超额中<b>残差贡献 &gt;90%</b>。</div>
-      <div class="e"><b>证据：</b>V9 投研段；指增超额归因。<b>主答：</b>李维佳</div></div>
 
-    <div class="qa" style="order:25"><div class="q"><i>Q13</i>极端行情你们扛得住吗？</div>
+    <div class="qa" style="order:25"><div class="q"><i>Q10</i>极端行情你们扛得住吗？</div>
       <div class="a">三次都过来了：2024/2 小盘流动性、2024/9 急涨、2026/7 风格反转。做法是<b>先压敞口、再调参数、事后复盘</b>，不靠一次判断。</div>
       <div class="e"><b>边界：</b>不承诺下次不回撤；只承诺有边界、有预案。<b>主答：</b>顾小军</div></div>
 
-    <div class="qa" style="order:26"><div class="q"><i>Q14</i>除了 SIZE，其他敞口是不是软控？这次亏就亏在这？</div>
+    <div class="qa" style="order:26"><div class="q"><i>Q11</i>除了 SIZE，其他敞口是不是软控？这次亏就亏在这？</div>
       <div class="a">您说得对，这是最重要的复盘点。过去只硬控 SIZE，流动性/残差波动率/动量用惩罚项软控；这次信号足够强，<b>软控被顶穿</b>，几类风格同向亏损。整改是把此前软控的<b>流动性/残差波动率加 0.6 硬上限</b>；size 一直 ±0.2；单票集中度 1%→0.5–0.3% 是 7 月临时压降，8 月底已调回。另加负相关偏离度指标和紧急风险会议机制。</div>
       <div class="e"><b>边界：</b>不辩称“软控更优”；硬控的代价是 Alpha，靠低相关/负暴露因子补。<b>主答：</b>顾小军/李维佳</div></div>
   </div>
 
-  <div class="sec" style="margin-top:.6mm"><span class="no">B</span><span class="tt">消费者保护部</span><span class="sub">只留两问 · 主答：庞小强</span></div>
+  <div class="sec" style="margin-top:.6mm"><span class="no">二</span><span class="tt">消费者保护部</span><span class="sub">只留两问 · 主答：庞小强</span></div>
   <div class="qgrid">
     <div class="qa" style="order:2"><div class="q"><i>Q1</i>销售话术会不会承诺收益？</div>
       <div class="a">统一话术：<b>不承诺收益、不承诺回撤、不承诺排名</b>；只用“目标/区间/历史”；宣传材料发前合规审核、双录留痕；我们不自行对外发布。</div>
@@ -527,12 +502,12 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 <!-- ================= P4 产品 + 经典难题 ================= -->
 <div class="page" id="p4">
   <div class="hd">
-    <div><div class="t1">产品引入部 · 7 问 ＋ 策略与产品 10 问（按类）</div>
+    <div><div class="t1">产品引入 6 问 ＋ 策略/产品 8 问</div>
       <div class="t2">前者怕“卖不掉”，后者是评审/分行最常问的“硬问题”</div></div>
-    <div class="pg">内部 · 不外发<br><b>P4</b> / 5</div>
+    <div class="pg">约 3′<br><b>P4</b> / 5</div>
   </div>
 
-  <div class="sec"><span class="no">A</span><span class="tt">产品引入部</span><span class="sub">要素 · 额度 · 分行 · 投后 · 主答：庞小强</span></div>
+  <div class="sec"><span class="no">一</span><span class="tt">产品引入部</span><span class="sub">要素 · 额度 · 投后 · 主答：庞小强</span></div>
   <div class="qgrid">
     <div class="qa"><div class="q"><i>Q1</i>产品要素是什么？</div>
       <div class="a">纯中性、<b>R3</b>；认购/申购 <b>0.50%</b>；固定管理费合计 <b>≈1.98%/年</b>（投顾 0.80＋招行客户维护 1.00＋信托 0.10）＋托管 0.06%＋底层外包 ≤0.02%；业绩报酬：单利年化 5% 以上收取全部收益 <b>25%</b>，计提后不低于 5%；跟投 ≥500 万；2 年可延期、目标 15 亿。</div>
@@ -542,54 +517,51 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
       <div class="a">三个已验证：招行 <b>20 亿额度基本发完</b>、<b>30+ 家分行</b>；员工保险、工资卡、私钻卡等综合合作；申请 <b>R3 纯中性</b>新额度；容量 150 亿；愿意分批、控量。</div>
       <div class="e"><b>口径：</b>20 亿额度基本发完；本次申请新额度。<b>主答：</b>庞小强</div></div>
 
-    <div class="qa"><div class="q"><i>Q3</i>什么时候发？分行怎么排？</div>
-      <div class="a">评审通过后 <b>11 月</b>启动；按分行意向分批排期，成熟一批、再推一批；不全面铺开。</div>
-      <div class="e"><b>边界：</b>以分行意向与实际排期为准。<b>主答：</b>庞小强</div></div>
-
-    <div class="qa"><div class="q"><i>Q4</i>分行覆盖怎么样？</div>
+    <div class="qa"><div class="q"><i>Q3</i>分行覆盖怎么样？</div>
       <div class="a">已覆盖 <b>30+ 家分行</b>；深圳、南京、青岛、广州、北京、西安、东莞、合肥、佛山、福州等大分行支持度高；今年开展晨会/夕会、客户活动、主题沙龙；近几周市场波动，多家分行邀请我们做路演培训；对接人和销售老师合作体验好，额度消化较充分。</div>
       <div class="e"><b>证据：</b>分行走访与活动记录；可提供名单。<b>主答：</b>庞小强</div></div>
 
-    <div class="qa"><div class="q"><i>Q5</i>货架已有中性 / 现在推 R3 是不是不合时宜？</div>
+    <div class="qa"><div class="q"><i>Q4</i>货架已有中性 / 现在推 R3 是不是不合时宜？</div>
       <div class="a">不是替代，是<b>补充低波稳健货架</b>：纯中性、不带个股融券（样本仅有少量 ETF 融券）、回撤 5.3 个点量级；R3 受众更广，匹配招行 <b>1200–1400 亿</b>中性存量；回撤期把风控讲透，比顺风期路演更有说服力。</div>
       <div class="e"><b>边界：</b>不点友商、不比排名。<b>主答：</b>顾小军/庞小强</div></div>
 
-    <div class="qa"><div class="q"><i>Q6</i>投后谁负责？</div>
-      <div class="a"><b>6 位销售同事</b>，每人认领一部分分行；<b>庞小强</b>负责总行与大分行、客户活动、分支行领导；<b>丁一、旭文</b>各带 2–3 人团队覆盖全范围招行；周报/月报/回撤 48h 说明。</div>
-      <div class="e"><b>主答：</b>庞小强 / 丁一</div></div>
+    <div class="qa"><div class="q"><i>Q5</i>投后谁负责？</div>
+      <div class="a"><b>6 位销售同事</b>，每人认领一部分分行；<b>庞小强</b>负责总行与大分行、客户活动、分支行领导；其他销售同事各带 2–3 人覆盖分行；周报/月报/回撤 48h 说明。</div>
+      <div class="e"><b>主答：</b>庞小强</div></div>
 
-    <div class="qa"><div class="q"><i>Q7</i>15 亿接得住吗？</div>
+    <div class="qa"><div class="q"><i>Q6</i>15 亿接得住吗？</div>
       <div class="a">接得住，也敢说不：容量 150 亿，80% 预警、100% 暂停募集；这一单愿意分批、控量，先做出口碑。</div>
       <div class="e"><b>主答：</b>顾小军/庞小强</div></div>
   </div>
 
-  <div class="sec"><span class="no">B</span><span class="tt">策略与产品 · 10 问（按类）</span><span class="sub">评审、分行、客户都会问</span></div>
+  <div class="sec"><span class="no">二</span><span class="tt">策略与产品 · 8 问（按类）</span><span class="sub">评审、分行、客户都会问</span></div>
   <div class="qgrid">
-    <div class="qgroup" style="order:1">A · 策略与业绩</div>
-    <div class="qgroup" style="order:10">B · 产品与合规</div>
+    <div class="qgroup" style="order:1">（一）策略与业绩</div>
+    <div class="qgroup" style="order:10">（二）产品与合规</div>
     <div class="qa" style="order:2"><div class="q"><i>01</i>中性到底靠什么赚钱？</div>
       <div class="a">收益 ≈ <b>选股超额 − 对冲成本</b>。多头买一篮子量化选出的股票，空头用股指期货对冲掉涨跌，只留下选股超额；不要求指数涨，只要求多头跑赢对冲的指数。</div></div>
     <div class="qa" style="order:3"><div class="q"><i>02</i>中性为什么也会回撤？不是不赌方向吗？</div>
       <div class="a">不赌方向 ≠ 不波动：风格剧烈切换时选股超额阶段性失效，对冲端也有基差波动。用硬约束把波动控制在可预期范围，并看回撤后的修复。</div></div>
-    <div class="qa" style="order:4"><div class="q"><i>03</i>同样叫中性，为什么你们波动 8–9%，别人 3–5%？</div>
-      <div class="a">因为收益来源不同：低波中性更偏低频、约束更严；中频交易型 Alpha 弹性大、波动也大。<b>本次报的是 R3 低波版（V9 样本波动 5.21%）</b>，不是 R4 中频版。</div></div>
-    <div class="qa" style="order:11"><div class="q"><i>04</i>现在对冲成本高不高？</div>
+    <div class="qa" style="order:11"><div class="q"><i>05</i>现在对冲成本高不高？</div>
       <div class="a">贴水是中性唯一的显性成本；IF/IC/IM 混合对冲、按基差动态调比，设预警线。截至 10 月 23 日，IC 年化贴水约 <b style="color:#C0392B">6.9%</b>，处于相对友好区间；不作为加仓理由。</div></div>
-    <div class="qa" style="order:5"><div class="q"><i>05</i>2024 年 2 月，中性为什么清仓？</div>
+    <div class="qa" style="order:5"><div class="q"><i>03</i>2024 年 2 月，中性为什么清仓？</div>
       <div class="a">当时基差年化超过 <b>30%</b>，超额覆盖不了对冲成本，人工把中性清了一次；等基差回到 5%–6% 再恢复。事后看是对的——硬扛就是拿客户的钱赌基差回归。</div></div>
     <div class="qa" style="order:12"><div class="q"><i>06</i>什么是 Pure Alpha？和普通 Alpha 怎么区分？</div>
       <div class="a">不是“没有波动”，是“不靠市场、行业、风格赚钱”：先市场中性（β 对掉），再行业中性（偏离压小），最后风格中性（市值/动量/波动可控）；剩下的残差才是 Pure Alpha。</div></div>
-    <div class="qa" style="order:6"><div class="q"><i>07</i>基差／贴水到底是什么？为什么决定中性成本？</div>
-      <div class="a">基差＝现货与期货的价差；贴水＝期货比现货便宜。中性用期货做空对冲，建仓时贴水越深，相当于卖得越便宜、未来成本越高；同一只中性，在不同贴水位置建仓，长期收益差别很大。</div></div>
-    <div class="qa" style="order:13"><div class="q"><i>08</i>超额环境怎么读？离散度、跑赢占比、拥挤度分别是什么？</div>
+    <div class="qa" style="order:13"><div class="q"><i>07</i>超额环境怎么读？离散度、跑赢占比、拥挤度分别是什么？</div>
       <div class="a">离散度＝个股分化有多大；跑赢占比＝多少股票跑赢基准；拥挤度＝同类资金在同一个方向上的拥挤程度。三个数一起看，才知道当下是选股的土壤，还是风格的赌场。</div></div>
-    <div class="qa" style="order:14"><div class="q"><i>09</i>策略容量是固定的吗？规模大了超额会降？</div>
+    <div class="qa" style="order:14"><div class="q"><i>08</i>策略容量是固定的吗？规模大了超额会降？</div>
       <div class="a">容量不是固定数字，是收益预期的函数。规模上去后交易冲击上升、能买的票变少、因子拥挤加剧，超额自然被摊薄。看容量要问：策略频段、当前规模占容量比例、到预警线后的处理规则。</div></div>
-    <div class="qa" style="order:7"><div class="q"><i>10</i>收益是真 α 还是靠风格敞口赚的？</div>
+    <div class="qa" style="order:7"><div class="q"><i>04</i>收益是真 α 还是靠风格敞口赚的？</div>
       <div class="a">看归因：剥离风格贡献后看残差 α。我们严格控制市值风格敞口，不靠赌小盘；近年 Pure Alpha 占比已提升到 <b>九成左右</b>。只比净值无法排除运气，建议让管理人给归因拆解。</div></div>
   </div>
 
   
+  <div class="sec" style="margin-top:1mm"><span class="no">三</span><span class="tt">产品引入部 · 策略补充</span><span class="sub">从风控问答移入产品部</span></div>
+  <div class="idea" style="grid-template-columns:1fr">
+    <div><b>策略会不会失效？｜</b>全市场 3500+，IF/IC/IM 混合；5000+ 因子、2–3 月迭代；残差贡献 &gt;90%。</div>
+  </div>
+
   <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　P4 产品/难题</span></div>
 </div>
 
@@ -598,7 +570,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="hd">
     <div><div class="t1">上场前要提前想的 10 个判断 ＋ 现场执行</div>
       <div class="t2">问题可以现场想，判断必须提前定；这一页是给三位领导的“会前 10 分钟”</div></div>
-    <div class="pg">内部 · 不外发<br><b>P5</b> / 5</div>
+    <div class="pg">约 2′<br><b>P5</b> / 5</div>
   </div>
 
   <div class="sec"><span class="no">01</span><span class="tt">十个判断（先定，再上场）</span><span class="sub">按重要性排序</span></div>
@@ -658,7 +630,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="hd">
     <div><div class="t1">2026 年 7 月回撤 · 专项说明</div>
       <div class="t2">维佳尽调版｜不是敞口超限，是波动放大＋风格共振＋Pure Alpha 同步回撤；8 月已调回，四条改进已落地</div></div>
-    <div class="pg">内部 · 不外发<br><b>附录 A</b></div>
+    <div class="pg">约 2′<br><b>附录 A</b></div>
   </div>
 
   <div class="sec"><span class="no">01</span><span class="tt">市场背景：K 型分化＋去杠杆＋新股抽血</span><span class="sub">先把“市场发生了什么”说清楚</span></div>
@@ -707,38 +679,19 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　附录 A·7月回撤</span></div>
 </div>
 
-<!-- ================= 附录 B 上台逐字稿 ================= -->
-<div class="page" id="script">
-  <div class="hd">
-    <div><div class="t1">附录 B · 上台逐字稿</div>
-      <div class="t2">6 页完整台词；领导不必全读，现场按 P1 的 40 分钟节奏走</div></div>
-    <div class="pg">内部 · 不外发<br><b>附录 B</b></div>
-  </div>
 
-  <div class="sec"><span class="no">01</span><span class="tt">谁讲哪段</span><span class="sub">0–40′，每段一个重点</span></div>
-  <table class="t">
-    <tr><th style="width:18mm">时间</th><th style="width:32mm">谁</th><th>这一段只讲一件事</th></tr>
-    <tr><td class="k">0–3′</td><td class="k">庞小强</td><td>五年合作、20 亿额度基本发完、30+ 分行；把时间交给顾小军。</td></tr>
-    <tr><td class="k">3–18′</td><td class="k">顾小军</td><td>先给结论：成益 1 号剥离 CTA；38.03/9.32/-5.30；对账 35.63 vs 34.67；7 月回撤与修复。</td></tr>
-    <tr><td class="k">18–26′</td><td class="k">李维佳</td><td>全市场选股 3500+、IF/IC/IM 混合对冲、Pure Alpha &gt;90%；敞口四个数；两次迭代。</td></tr>
-    <tr><td class="k">26–33′</td><td class="k">顾小军</td><td>68/51、72 亿/129 支、容量 150 亿、80% 预警/100% 暂停、30+ 分行。</td></tr>
-    <tr><td class="k">33–38′</td><td class="k">庞小强</td><td>R3 要素、费率/期限/跟投、申请 10–20 亿新额度、分批控量。</td></tr>
-    <tr><td class="k">38–40′</td><td class="k">顾小军</td><td>三句话：业绩可对账、风险有边界、合作有方案；请评审给档级与额度。</td></tr>
-  </table>
-
-  <div class="three" style="margin-top:1mm">
-    <div class="card"><div class="note"><b>庞小强 · 开场</b><br>“感谢五年合作；20 亿额度基本发完、30+ 分行；今年 CTA+中性达到客户长期收益预期。下面把时间交给顾小军。”</div></div>
-    <div class="card"><div class="note"><b>顾小军 · 业绩</b><br>“这条曲线是拿贵行在管的成益 1 号拆出来的：38.03/9.32/-5.30；拨出的中性加回 CTA，对账 35.63 对 34.67。”</div></div>
-    <div class="card"><div class="note"><b>李维佳 · 策略</b><br>“全市场 3500+，IF/IC/IM 混合对冲，Pure Alpha &gt;90%；敞口四个数，7 月动作有阈值、有记录。”</div></div>
-  </div>
-
-  <div class="quote"><b>完整逐字稿：</b>6 页，含开场、业绩、策略、能力、要素、收束与交接句；点下面按钮打开 PDF。</div>
-  <div style="text-align:center;margin:4mm 0">
-    <a href="https://dylanboboji.github.io/mingtang/zhao/pdf/script.pdf" style="display:inline-block;background:var(--wine3);color:#fff;text-decoration:none;font-weight:800;font-size:10pt;padding:3mm 8mm;border-radius:2mm">打开完整逐字稿 PDF（6 页）</a>
-  </div>
-
-  <div class="ft"><span>ZHAO-2026-10-27-REVIEW v3　附录 B · 上台逐字稿</span></div>
-</div>
-
+<div id="lb"><img alt="放大预览"></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), img=lb.querySelector('img');
+  document.querySelectorAll('.page img').forEach(function(im){ im.title='点击放大'; });
+  document.addEventListener('click', function(e){
+    if(e.target.tagName==='IMG' && e.target.closest('.page')){
+      img.src=e.target.src; lb.classList.add('on'); e.preventDefault();
+    } else if(e.target===lb){ lb.classList.remove('on'); img.src=''; }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ lb.classList.remove('on'); img.src=''; } });
+})();
+</script>
 </body>
 </html>
