@@ -233,6 +233,13 @@ body, .page, table, .note, .qa, .card { font-family:"Microsoft YaHei","PingFang 
 #p5 table.perf td.num { text-align:right; font-variant-numeric:tabular-nums; }
 #p5 table.perf td.grp { font-weight:700; color:var(--wine); background:#F7F2E8; }
 #p2 { gap:1.6mm; }
+
+/* table line discipline */
+#p5 table.staff td:nth-child(2), #p5 table.staff td:nth-child(3) { white-space:nowrap; }
+#p5 table.results th:nth-child(3), #p5 table.results td:nth-child(3) { white-space:nowrap; }
+#p5 table.perf td.num, #p5 table.perf th:nth-child(3), #p5 table.perf th:nth-child(4) { text-align:center !important; }
+#p5 table.perf td:last-child, #p5 table.perf th:last-child { white-space:nowrap; }
+#appendix .idea div { white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -608,8 +615,8 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   </div>
 
   <div class="sec"><span class="no">02</span><span class="tt">现场分工与交接</span><span class="sub">同一问题不出现两个答案</span></div>
-  <table class="t">
-    <tr><th style="width:40mm">议题</th><th style="width:26mm">主答</th><th style="width:24mm">补充</th><th>备注</th></tr>
+  <table class="t staff">
+    <tr><th style="width:36mm">议题</th><th style="width:36mm">主答</th><th style="width:28mm">补充</th><th>备注</th></tr>
     <tr><td class="k">战略 / 档级 / 额度 / 合作模式</td><td>庞小强</td><td>顾小军</td><td>商业条款只由庞小强开口</td></tr>
     <tr><td class="k">消保 / 宣传 / 投后</td><td>庞小强</td><td>—</td><td>按统一话术</td></tr>
     <tr><td class="k">股权 / 治理 / 实控人</td><td>顾小军</td><td>—</td><td>数字只用唯一版本</td></tr>
@@ -618,11 +625,11 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
   </table>
 
   <div class="sec"><span class="no">03</span><span class="tt">三种结果，三套应对</span><span class="sub">当场不争辩，事后有动作</span></div>
-  <table class="t">
-    <tr><th style="width:24mm">结果</th><th>当场做什么</th><th style="width:42mm">会后 24 小时</th></tr>
-    <tr><td class="k">通过</td><td>确认档级、额度、排期；请对方明确“下一步流程”；不追加新承诺。</td><td>致谢；启动发行准备；内部通报。</td></tr>
-    <tr><td class="k">有条件通过</td><td>逐条记下补件清单、时限、责任人；能当场答的答，不能的记下。</td><td>24 小时内给初稿；指定唯一对接人。</td></tr>
-    <tr><td class="k">暂缓 / 否决</td><td>只问一句“卡在哪一条”；不争辩、不越级；争取二次上会时间。</td><td>找支持者复盘；补硬伤；不承诺做不到的事。</td></tr>
+  <table class="t results">
+    <tr><th style="width:26mm">结果</th><th>当场做什么</th><th style="width:55mm">会后 24 小时</th></tr>
+    <tr><td class="k">通过</td><td>确认档级、额度、排期；请对方明确“下一步流程”；不追加新承诺。</td><td>致谢；启动发行；内部通报。</td></tr>
+    <tr><td class="k">有条件通过</td><td>逐条记下补件清单、时限、责任人；能当场答的答，不能的记下。</td><td>24h 给初稿；指定唯一对接人。</td></tr>
+    <tr><td class="k">暂缓 / 否决</td><td>只问一句“卡在哪一条”；不争辩、不越级；争取二次上会时间。</td><td>复盘；补硬伤；不承诺。</td></tr>
   </table>
 
   <div class="sec"><span class="no">04</span><span class="tt">重点十问（会前自答，答案在 P3/P4）</span><span class="sub">答不上来的，今晚补</span></div>
@@ -647,7 +654,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <div class="sec"><span class="no">05</span><span class="tt">各产品线最新业绩（2026年以来）</span><span class="sub">截至 9/30 与 10/23；招行在售单独标</span></div>
   <table class="t perf" style="table-layout:fixed">
-    <tr><th style="width:22mm">产品线</th><th>代表产品</th><th style="width:24mm">9/30 今年</th><th style="width:24mm">10/23 今年</th><th style="width:40mm">备注</th></tr>
+    <tr><th style="width:20mm">产品线</th><th style="width:45mm">代表产品</th><th style="width:21mm">9/30</th><th style="width:21mm">10/23</th><th style="width:73mm">备注</th></tr>
     <tr><td class="grp" rowspan="3">CTA</td><td>盈冲量化 CTA10 号</td><td class="num">6.53%</td><td class="num">9.44%</td><td>公司代表产品</td></tr>
     <tr><td>招享盈冲 CTA1 号</td><td class="num">4.93%</td><td class="num">7.39%</td><td>招行在售</td></tr>
     <tr><td>招享盈冲 CTA2 号</td><td class="num">5.17%</td><td class="num">7.63%</td><td>招行在售</td></tr>
@@ -659,7 +666,7 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
     <tr><td class="grp" rowspan="2">CTA＋中性</td><td>混合均值（4 只等权）</td><td class="num">8.34%</td><td class="num">7.88%</td><td>成益 1/2、稳健、清源 2</td></tr>
     <tr><td>招享成益量化 1 号</td><td class="num">10.60%</td><td class="num">10.34%</td><td>招行在售</td></tr>
 
-    <tr><td class="grp">纯中性</td><td>剥离法中性（成益 1 号剥离 CTA）</td><td class="num">8.58%*</td><td class="num">—</td><td>累计 38.03%、年化 9.32%、回撤 -5.30%（至 8/31）</td></tr>
+    <tr><td class="grp">纯中性</td><td>剥离法中性（成益 1 号剥离 CTA）</td><td class="num">8.58%*</td><td class="num">—</td><td>8/31：38.03 / 9.32 / -5.30</td></tr>
   </table>
   <div class="note" style="font-size:6.4pt;line-height:1.5">* 纯中性为截至 8/31 的今年以来；9/30 口径待 IMS 更新。其余 10/23 为 10/22 托管净值叠加 10/23 交易日报总收益的预估；9/30 为托管口径。数据来源：IMS。</div>
 
@@ -709,11 +716,11 @@ try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.
 
   <div class="sec"><span class="no">05</span><span class="tt">时间线：7 月做了什么、8 月怎么调回</span><span class="sub">先认、再转、后给数</span></div>
   <div class="idea" style="grid-template-columns:repeat(5,1fr)">
-    <div><b>7 月中</b><br>回撤 5–6.7 点，触发阈值</div>
-    <div><b>7 月最后两周</b><br>压降集中度、下调几个敞口，回撤受控</div>
-    <div><b>8 月第一周</b><br>反弹偏弱——这些动作的代价</div>
-    <div><b>8 月</b><br>+2.33%，量价信号恢复</div>
-    <div><b>8 月底</b><br>参数调回；0.6 硬上限保留</div>
+    <div><b>7 月中</b><br>回撤 5–6.7 点</div>
+    <div><b>7 月最后两周</b><br>压降集中度、下调敞口</div>
+    <div><b>8 月第一周</b><br>反弹偏弱，动作代价</div>
+    <div><b>8 月</b><br>+2.33%，信号恢复</div>
+    <div><b>8 月底</b><br>参数调回；0.6 硬顶</div>
   </div>
 
   
