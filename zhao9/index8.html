@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>招行 10/27 · 材料包</title>
+<style>
+  :root{--navy:#0B1B4D;--blue:#002FA7;--gold:#B7791F;--ink:#1E2A44;--gray:#6A7488;--line:#DCE3EE;--bg:#F4F6F9;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;padding:28px 16px 40px}
+  .wrap{max-width:980px;margin:0 auto}
+  .hd{background:linear-gradient(115deg,#081633,#0B1B4D 55%,#002FA7);color:#fff;border-radius:14px;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;align-items:flex-end}
+  .hd h1{font-size:24px;letter-spacing:1px;font-family:"SimSun",serif}
+  .hd p{font-size:13px;opacity:.82;margin-top:8px;line-height:1.7}
+  .hd .tag{font-size:12px;color:#E8C79A;border:1px solid rgba(232,199,154,.5);border-radius:99px;padding:4px 10px;white-space:nowrap}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}.hd{flex-direction:column;align-items:flex-start}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 4px 16px rgba(11,27,77,.05)}
+  .card .k{font-size:12px;color:var(--gold);letter-spacing:1px;font-weight:700}
+  .card h2{font-size:19px;margin:8px 0 6px;color:var(--navy)}
+  .card .s{font-size:13px;color:var(--gray);line-height:1.7;min-height:44px}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  a.btn,button.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:8px;font-size:13px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit}
+  .primary{background:var(--navy);color:#fff}
+  .primary:hover{background:var(--blue)}
+  .ghost{background:#fff;color:var(--navy);border-color:var(--line)}
+  .ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .note{margin-top:18px;background:#FFF8EA;border:1px solid #E8D6B4;border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.8;color:#4A3A22}
+  .note b{color:#8A5A12}
+  .ft{margin-top:18px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .copy{background:#fff;border:1px solid var(--line);color:var(--navy);border-radius:8px;padding:8px 12px;font-size:12px;cursor:pointer;font-family:inherit}
+  .copy:hover{border-color:var(--blue);color:var(--blue)}
+  #gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#081633,#0B1B4D 55%,#002FA7);display:flex;align-items:center;justify-content:center;padding:16px}
+  #gate .gbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:28px 30px;width:360px;max-width:100%;text-align:center;color:#fff}
+  #gate .gt{font-family:"SimSun",serif;font-size:20px;font-weight:700;letter-spacing:2px}
+  #gate .gs{font-size:12px;opacity:.78;margin:8px 0 18px}
+  #gate input{width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:rgba(0,0,0,.2);color:#fff;font-size:14px;text-align:center;outline:none}
+  #gate button{margin-top:10px;width:100%;padding:10px;border:0;border-radius:8px;background:#C08A2D;color:#0B1B4D;font-weight:700;font-size:14px;cursor:pointer}
+  #gate .ge{color:#F3C9A0;font-size:12px;height:16px;margin-top:6px}
+  @media print{#gate{display:none!important}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gbox">
+    <div class="gt">招行 10/27 · 材料包</div>
+    <div class="gs">内部阅示 · 请输入访问密码</div>
+    <input id="pw" type="password" placeholder="输入密码" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">进入</button>
+    <div class="ge" id="err"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hd">
+    <div>
+      <h1>招行 10/27 · 材料包</h1>
+      <p>两个会议、两套材料，分开看；点开需访问密码。<br>PPT 关键页已嵌进对应板块；HTML 可在线看，PDF 可下载打印。</p>
+    </div>
+    <div class="tag">内部阅示 · 请勿外传</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="k">09:00 · 全行代销评审</div>
+      <h2>招行代销上会 · 主手册</h2>
+      <div class="s">P1 总览（来龙去脉＋物料＋40分钟流程＋速查）／P2 策略（图文对应）／P3 风控／P4 产品／P5 执行＋附录 A（7 月回撤）。共 6 页。</div>
+      <div class="btns">
+        <a class="btn primary" href="review8.html">打开网页版</a>
+        <a class="btn ghost" href="pdf/review8.pdf">下载 PDF（加密）</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="k">11:00 · 全委</div>
+      <h2>董博士团队 · CTA 复盘与追加</h2>
+      <div class="s">封面＋P1 四只产品／P2 策略·迭代／P3 追加·8 问。9/29 数据。</div>
+      <div class="btns">
+        <a class="btn primary" href="quanwei8.html">打开网页版</a>
+        <a class="btn ghost" href="pdf/quanwei8.pdf">下载 PDF（加密）</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>访问密码：</b>请向发送人获取；网页与 PDF 使用同一密码。PDF 已加密，下载后打开时输入密码即可。<br>
+    
+    <b>打印建议：</b>A4 纵向、边距“无”、缩放 100%、勾选“背景图形”、取消页眉页脚。
+  </div>
+
+  <div class="ft">
+    <span>2026-10-24｜丁一｜内部材料，不构成投资建议</span>
+    <button class="copy" onclick="copyLink()">复制本页链接</button>
+  </div>
+</div>
+<script>
+function gh(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return (x>>>0).toString(16)}
+function unlock(){
+  var v=document.getElementById('pw').value.trim();
+  if(gh(v)==='6ef4c38a'){
+    document.getElementById('gate').style.display='none';
+    try{sessionStorage.setItem('zhao_ok','1');}catch(e){}
+  }else{document.getElementById('err').textContent='密码不对，请重试';}
+}
+try{if(sessionStorage.getItem('zhao_ok')){document.getElementById('gate').style.display='none';}}catch(e){}
+
+function copyLink(){
+  const url = location.href.split('#')[0];
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(()=>{const b=document.querySelector('.copy');b.textContent='已复制';setTimeout(()=>b.textContent='复制本页链接',1600);});
+  }else{
+    const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();
+    const b=document.querySelector('.copy');b.textContent='已复制';setTimeout(()=>b.textContent='复制本页链接',1600);
+  }
+}
+</script>
+</body>
+</html>
+
+
+
