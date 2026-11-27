@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:,">
-<title>公众号观察 · 密文分享</title>
+<title>宣传库 · 密文分享</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{min-height:100svh;display:grid;place-items:center;background:#EEF1F4;background-image:radial-gradient(54% 42% at 50% -6%,rgba(18,43,70,.12),rgba(18,43,70,0) 70%),linear-gradient(180deg,#F7F8FA,#E9EDF1 70%,#F7F8FA);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;color:#272E37}
@@ -25,7 +25,7 @@ button:disabled{opacity:.5;cursor:default}
 <body>
 <div class="card">
   <div class="tag">工作台 · 密文分享</div>
-  <h1>公众号观察</h1>
+  <h1>宣传库</h1>
   <div class="sub">本页内容为密文快照。<br>请输入约定密码。</div>
   <input id="pw" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="密码">
   <button id="go">解锁</button>
